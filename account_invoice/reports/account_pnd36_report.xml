@@ -1,0 +1,441 @@
+<odoo>
+    <template id="account_pnd36_report_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="article o_report_pp36_bg" style="font-size: 18px;">
+                    <div class="row" style="position: absolute;left:84mm;top:38mm;width:160mm;">
+                        <div class="col-7">
+                            <div t-if="doc.partner_id.vat">
+                                <span><t t-esc="doc.partner_id.vat[0]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[:1]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[1:2]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[2:3]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[3:4]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[4:5]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[5:6]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[6:7]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[7:8]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[8:9]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[9:10]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[10:11]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[11:12]"/></span>
+                            </div>
+                            <div style="float: right;position: absolute;top:9mm;left:64mm;">
+                                <t t-if="doc.partner_id.pnd_branch">
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[0]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[1]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[2]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[3]"/>
+                                    <span style="margin-right: 1mm;" t-esc="doc.partner_id.pnd_branch[4]"/>
+                                </t>
+                            </div>
+                            <div style="position: absolute;top:17mm;left:-14mm;width:80mm;">
+                                <div style="position: absolute;">
+                                    <span t-esc="doc.partner_id.local_name"/>
+                                </div>
+                            <div style="position: absolute;top:8mm;left:-20mm;width:50mm;">
+                                <span t-field="doc.partner_id.local_thai_building"/>
+                            </div>
+                            <div style="position: absolute;top:8mm;right:12mm;">
+                                <span t-field="doc.partner_id.local_thai_room"/>
+                            </div>
+                            <div style="position: absolute;top:8mm;right:-20mm;">
+                                <span t-field="doc.partner_id.local_thai_floor"/>
+                            </div>
+                            <div style="position: absolute;top:15mm;left:-36mm;">
+                                <span t-field="doc.partner_id.local_thai_village"/>
+                            </div>
+                            <div style="position: absolute;top:15mm;left:17mm;">
+                                <span t-field="doc.partner_id.local_thai_number"/>
+                            </div>
+                            <div style="position: absolute;top:15mm;right:35mm;">
+                                <span t-field="doc.partner_id.local_thai_moo"/>
+                            </div>
+                            <div style="position: absolute;top:15mm;right:-8mm;">
+                                <span t-field="doc.partner_id.local_thai_alley"/>
+                            </div>
+                            <div style="position: absolute;top:23mm;left:-37mm;">
+                                <span t-field="doc.partner_id.local_thai_road"/>
+                            </div>
+                            <div style="position: absolute;top:23mm;left:39mm;">
+                                <span t-field="doc.partner_id.local_street2"/>
+                            </div>
+                            <div style="position: absolute;top:30mm;left:-28mm;">
+                                <span t-field="doc.partner_id.local_city"/>
+                            </div>
+                            <div style="position: absolute;top:30mm;left:39mm;">
+                                <span t-field="doc.partner_id.local_state"/>
+                            </div>
+                            <div style="position: absolute;top:38mm;left:-22mm;">
+                                <t t-if="doc.partner_id.local_zip">
+                                    <span style="margin-left: 0mm;" t-esc="doc.partner_id.local_zip[0]"/>
+                                    <span style="margin-left: 2.5mm;" t-esc="doc.partner_id.local_zip[1]"/>
+                                    <span style="margin-left: 2.5mm;" t-esc="doc.partner_id.local_zip[2]"/>
+                                    <span style="margin-left: 3mm;" t-esc="doc.partner_id.local_zip[3]"/>
+                                    <span style="margin-left: 2mm;" t-esc="doc.partner_id.local_zip[4]"/>
+                                </t>
+                            </div>
+                            <div style="position: absolute;top:38mm;left:32mm;">
+                               <span t-field="doc.partner_id.phone"/>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-5" style="position: absolute;top:12mm;left:94mm;">
+                            <div style="position: absolute;">
+                                <span t-if="doc.pay_purchase">✔</span>
+                            </div>
+                            <div style="position: absolute;top:28mm;">
+                                <span t-if="doc.product_transfer">✔</span>
+                            </div>
+                            <div style="position: absolute;top:36mm;">
+                                <span t-if="doc.property_auction">✔</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:108mm;">
+                        <div class="col-12">
+                            <div style="position: absolute;left:45mm;">
+                                <span t-if="doc.normal_confirm">✔</span>
+                            </div>
+                            <div style="position: absolute;left:100mm;">
+                                <span t-if="doc.further_confirm">✔</span>
+                            </div>
+                            <div style="position: absolute;left:142mm;">
+                                <span t-field="doc.further_time"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="font-size: 16px;position: relative;top:116mm;">
+                        <div class="col-12" style="position: absolute;">
+                            <div style="position: absolute;left:86mm;">
+                                <span t-field="doc.name_operator"/>
+                            </div>
+                            <div style="position: absolute;left:52mm;top:9mm;">
+                                <span t-field="doc.address"/>
+                            </div>
+                            <div style="position: absolute;left:110mm;top:9mm;">
+                                <span t-field="doc.address_number"/>
+                            </div>
+                            <div style="position: absolute;left:138mm;top:9mm;">
+                                <span t-field="doc.street"/>
+                            </div>
+                            <div style="position: absolute;left:47mm;top:17mm;">
+                                <span t-field="doc.city"/>
+                            </div>
+                            <div style="position: absolute;left:110mm;top:17mm;">
+                                <span t-field="doc.state"/>
+                            </div>
+                            <div style="position: absolute;left:47mm;top:26mm;">
+                                <span t-field="doc.country_id.name"/>
+                            </div>
+                            <div t-if="doc.post_address" style="position: absolute;left:143mm;top:26mm;">
+                                <span><t t-esc="doc.post_address[0]"/></span>
+                                <span style="position: absolute;left:6mm;"><t t-esc="doc.post_address[1]"/></span>
+                                <span style="position: absolute;left:12mm;"><t t-esc="doc.post_address[2]"/></span>
+                                <span style="position: absolute;left:18mm;"><t t-esc="doc.post_address[3]"/></span>
+                                <span style="position: absolute;left:24mm;"><t t-esc="doc.post_address[4]"/></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="font-size: 16px;position: relative;top:156mm;">
+                        <div class="col-5">
+                            <div style="position: absolute;">
+                                <t t-set="pay_date">
+                                    <t t-if="doc.pay_date.strftime('%m') == '01'">มกราคม</t>
+                                    <t t-elif="doc.pay_date.strftime('%m') == '02'">กุมภาพันธ์</t>
+                                    <t t-elif="doc.pay_date.strftime('%m') == '03'">มีนาคม</t>
+                                    <t t-elif="doc.pay_date.strftime('%m') == '04'">เมษายน</t>
+                                    <t t-elif="doc.pay_date.strftime('%m') == '05'">พฤษภาคม</t>
+                                    <t t-elif="doc.pay_date.strftime('%m') == '06'">มิถุนายน</t>
+                                    <t t-elif="doc.pay_date.strftime('%m') == '07'">กรกฎาคม</t>
+                                    <t t-elif="doc.pay_date.strftime('%m') == '08'">สิงหาคม</t>
+                                    <t t-elif="doc.pay_date.strftime('%m') == '09'">กันยายน</t>
+                                    <t t-elif="doc.pay_date.strftime('%m') == '10'">ตุลาคม</t>
+                                    <t t-elif="doc.pay_date.strftime('%m') == '11'">พฤศจิกายน</t>
+                                    <t t-elif="doc.pay_date.strftime('%m') == '12'">ธันวาคม</t>
+                                </t>
+                                <span style="margin-left:33mm;" t-esc="doc.pay_date.strftime('%d')"/>
+                                <span style="margin-left:21mm;" t-esc="pay_date"/>
+                                <span style="margin-left:25mm;" t-esc="int(doc.pay_date.strftime('%Y')) + 543"/>
+                            </div>
+                            <div style="position: absolute;top:16mm;left:54mm;">
+                                <span style="" t-esc="doc.currency_ex_ref"/>
+                            </div>
+                        </div>
+                        <div class="col-7" style="position: absolute;top:-5mm;left:118mm;">
+                            <div style="position: absolute;">
+                               <span t-if="doc.pay_the_price_bool">✔</span>
+                            </div>
+                            <div style="position: absolute;top:14mm;">
+                               <span t-if="doc.entrepreneur">✔</span>
+                            </div>
+                            <div style="position: absolute;top:21mm;">
+                               <span t-if="doc.abroad">✔</span>
+                            </div>
+                            <div style="position: absolute;top:21mm;left:40mm;">
+                                <span t-esc="doc.other_other"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="font-size: 16px;position: relative;top:180mm;">
+                        <div class="col-12" style="position: absolute;width:230mm;left:70mm;">
+                            <p t-esc="doc.pay_payment"/>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:195mm;width:230mm;">
+                        <div class="col-12">
+                            <div style="position: absolute;left:96mm;font-size: 14px;">
+                                <span t-esc="doc.name_person_transfer"/>
+                            </div>
+                            <div style="position: absolute;left:3mm;top:7mm;">
+                                <span style="margin-left: 72.5mm;"><t t-esc="doc.tax_id[0]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_id[1]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_id[2]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_id[3]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.tax_id[4]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_id[5]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.tax_id[6]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_id[7]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.tax_id[8]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.tax_id[9]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_id[10]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_id[11]"/></span>
+                                <span style="margin-left: 5.5mm;"><t t-esc="doc.tax_id[12]"/></span>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:196mm;top:7mm;width:80mm;">
+                                <span t-field="doc.address_transfer"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:44mm;top:14mm;">
+                                <span t-field="doc.address_transfer_number"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:77mm;top:14mm;">
+                               <span t-field="doc.floor"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:100mm;top:14mm;width:70mm;">
+                                <span t-field="doc.swine"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:164mm;top:14mm;">
+                                <span t-field="doc.village_number"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:200mm;top:14mm;">
+                                <span t-field="doc.village"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:236mm;top:14mm;width:60mm;">
+                                <span t-field="doc.alley_alley"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:38mm;top:21mm;width:50mm;">
+                                <span t-field="doc.transfer_street"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:126mm;top:21mm;width:50mm;">
+                                <span t-field="doc.subdistrict"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:210mm;top:21mm;width:50mm;">
+                                <span t-field="doc.district"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;top:28mm;left:44mm;width:70mm;">
+                                <span t-field="doc.province"/>
+                            </div>
+                            <div t-if="doc.zip_code" style="position: absolute;top:27mm;left:124mm;width:70mm;">
+                                <span style="margin-left:3mm;"><t t-esc="doc.zip_code[0]"/></span>
+                                <span style="margin-left:2mm;"><t t-esc="doc.zip_code[1]"/></span>
+                                <span style="margin-left:2mm;"><t t-esc="doc.zip_code[2]"/></span>
+                                <span style="margin-left:3mm;"><t t-esc="doc.zip_code[3]"/></span>
+                                <span style="margin-left:2.5mm;"><t t-esc="doc.zip_code[4]"/></span>
+                            </div>
+                            <div style="position: absolute;top:27mm;left:180mm;width:70mm;">
+                                <span t-field="doc.tell"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:237mm;">
+                        <div class="col-5">
+                            <div style="position: absolute;font-size: 16px;">
+                                <t t-set="transfer_date">
+                                    <t t-if="doc.transfer_date.strftime('%m') == '01'">มกราคม</t>
+                                    <t t-elif="doc.transfer_date.strftime('%m') == '02'">กุมภาพันธ์</t>
+                                    <t t-elif="doc.transfer_date.strftime('%m') == '03'">มีนาคม</t>
+                                    <t t-elif="doc.transfer_date.strftime('%m') == '04'">เมษายน</t>
+                                    <t t-elif="doc.transfer_date.strftime('%m') == '05'">พฤษภาคม</t>
+                                    <t t-elif="doc.transfer_date.strftime('%m') == '06'">มิถุนายน</t>
+                                    <t t-elif="doc.transfer_date.strftime('%m') == '07'">กรกฎาคม</t>
+                                    <t t-elif="doc.transfer_date.strftime('%m') == '08'">สิงหาคม</t>
+                                    <t t-elif="doc.transfer_date.strftime('%m') == '09'">กันยายน</t>
+                                    <t t-elif="doc.transfer_date.strftime('%m') == '10'">ตุลาคม</t>
+                                    <t t-elif="doc.transfer_date.strftime('%m') == '11'">พฤศจิกายน</t>
+                                    <t t-elif="doc.transfer_date.strftime('%m') == '12'">ธันวาคม</t>
+                                </t>
+                                <span style="margin-left:34mm;" t-esc="doc.transfer_date.strftime('%d')"/>
+                                <span style="margin-left:20mm;" t-esc="transfer_date"/>
+                                <span style="margin-left:23mm;" t-esc="int(doc.operator_transfer_date.strftime('%Y')) + 543"/>
+                            </div>
+                        </div>
+                        <div class="col-7" style="position: absolute;top:-6mm;width:180mm;">
+                            <div style="font-size: 16px;position: absolute;left:50mm;">
+                                <p t-field="doc.list_product"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:245mm;">
+                        <div class="col-12">
+                            <div style="position: absolute;left:64mm;width:120mm;font-size: 16px;">
+                                <span t-field="doc.operator_name"/>
+                            </div>
+                            <div t-if="doc.operator_tax_id" style="position: absolute;top:7mm;">
+                                <span style="margin-left: 72.5mm;"><t t-esc="doc.operator_tax_id[0]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.operator_tax_id[1]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.operator_tax_id[2]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.operator_tax_id[3]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.operator_tax_id[4]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.operator_tax_id[5]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.operator_tax_id[6]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.operator_tax_id[7]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.operator_tax_id[8]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.operator_tax_id[9]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.operator_tax_id[10]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.operator_tax_id[11]"/></span>
+                                <span style="margin-left: 5.5mm;"><t t-esc="doc.operator_tax_id[12]"/></span>
+                            </div>
+                            <div style="position: absolute;margin-top:7mm;margin-left:195mm;width:100mm;">
+                                <span t-field="doc.operator_address"/>
+                            </div>
+                            <div style="position: absolute;margin-left:44mm;top:14mm;font-size: 16px;">
+                                <span t-esc="doc.operator_address_number"/>
+                            </div>
+                            <div style="position: absolute;margin-left:77mm;font-size: 16px;top:14mm;width:60mm;">
+                                <span t-esc="doc.operator_floor"/>
+                            </div>
+                            <div style="position: absolute;margin-left:100mm;width:70mm;font-size: 16px;top:14mm;">
+                                <span t-esc="doc.operator_swine"/>
+                            </div>
+                            <div style="position: absolute;margin-left:166mm;font-size: 16px;top:14mm;">
+                                <span t-esc="doc.operator_village_number"/>
+                            </div>
+                            <div style="position: absolute;margin-left:200mm;font-size: 16px;top:14mm;">
+                                <span t-esc="doc.operator_village"/>
+                            </div>
+                            <div style="position: absolute;margin-left:240mm;font-size: 16px;top:14mm;">
+                                <span t-esc="doc.operator_alley_alley"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:44mm;top:22mm;">
+                                <span t-esc="doc.operator_street"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:140mm;top:22mm;">
+                                <span t-esc="doc.operator_subdistrict"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;left:220mm;top:22mm;">
+                                <span t-esc="doc.operator_district"/>
+                            </div>
+                            <div style="font-size: 16px;position: absolute;top:28mm;">
+                                <span style="margin-left:47mm;" t-esc="doc.operator_province"/>
+                            </div>
+                            <div t-if="doc.operator_zip_code" style="position: absolute;top:28mm;left:126mm;">
+                                <span><t t-esc="doc.operator_zip_code[0]"/></span>
+                                <span style="margin-left:3mm;"><t t-esc="doc.operator_zip_code[1]"/></span>
+                                <span style="margin-left:2mm;"><t t-esc="doc.operator_zip_code[2]"/></span>
+                                <span style="margin-left:3mm;"><t t-esc="doc.operator_zip_code[3]"/></span>
+                                <span style="margin-left:2mm;"><t t-esc="doc.operator_zip_code[4]"/></span>
+                            </div>
+                            <div style="position: absolute;top:28mm;left:180mm;">
+                                <span t-esc="doc.operator_tell"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:279mm;">
+                        <div class="col-5">
+                            <t t-set="month_name">
+                                <t t-if="doc.operator_transfer_date.strftime('%m') == '01'">มกราคม</t>
+                                <t t-elif="doc.operator_transfer_date.strftime('%m') == '02'">กุมภาพันธ์</t>
+                                <t t-elif="doc.operator_transfer_date.strftime('%m') == '03'">มีนาคม</t>
+                                <t t-elif="doc.operator_transfer_date.strftime('%m') == '04'">เมษายน</t>
+                                <t t-elif="doc.operator_transfer_date.strftime('%m') == '05'">พฤษภาคม</t>
+                                <t t-elif="doc.operator_transfer_date.strftime('%m') == '06'">มิถุนายน</t>
+                                <t t-elif="doc.operator_transfer_date.strftime('%m') == '07'">กรกฎาคม</t>
+                                <t t-elif="doc.operator_transfer_date.strftime('%m') == '08'">สิงหาคม</t>
+                                <t t-elif="doc.operator_transfer_date.strftime('%m') == '09'">กันยายน</t>
+                                <t t-elif="doc.operator_transfer_date.strftime('%m') == '10'">ตุลาคม</t>
+                                <t t-elif="doc.operator_transfer_date.strftime('%m') == '11'">พฤศจิกายน</t>
+                                <t t-elif="doc.operator_transfer_date.strftime('%m') == '12'">ธันวาคม</t>
+                            </t>
+                            <div t-if="doc.operator_transfer_date" style="font-size: 16px;top:10mm;position: absolute;">
+                                <span style="margin-left:34mm;" t-esc="doc.operator_transfer_date.strftime('%#d')"/>
+                                <span style="margin-left:22mm;" t-esc="month_name"/>
+                                <span style="margin-left:23mm;" t-esc="int(doc.operator_transfer_date.strftime('%Y')) + 543"/>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div style="font-size: 16px;top:2mm;position: absolute;">
+                                <span style="margin-left:54mm;" t-field="doc.operator_list_product"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:300mm;">
+                        <div class="col-12">
+                            <div style="position:absolute;top:3mm;right:45mm;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_paid)"/>
+                            </div>
+                            <div style="position:absolute;top:10mm;right:45mm;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_vat)"/>
+                            </div>
+                            <div style="position:absolute;top:19mm;">
+                                <span style="margin-left:56mm;" t-esc="doc.amount_ch"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:335mm;">
+                        <div class="col-12">
+                             <div style="position:absolute;top:3mm;right:45mm;">
+                                <span t-esc="'{0:,.2f}'.format(doc.extra_money)"/>
+                            </div>
+                            <div style="position:absolute;top:12mm;right:45mm;">
+                                <span t-esc="'{0:,.2f}'.format(doc.find)"/>
+                            </div>
+                            <div style="position:absolute;top:19mm;right:45mm;">
+                                <span t-esc="'{0:,.2f}'.format(doc.total_vat)"/>
+                            </div>
+                            <div style="position:absolute;top:27mm;">
+                                <span style="margin-left:56mm;" t-esc="doc.total_ch"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:372mm;">
+                        <div class="col-12" style="text-align: center;">
+                            <div style="margin-top:9mm;">
+<!--                                <img t-att-src="'data:image/png;base64,' + doc.partner_id.user_ids.sign_signature.decode('utf-8')" style="width: 200px; height: 100px;"/>-->
+                            </div>
+                            <div style="margin-top:-3mm;">
+                                <span t-esc="doc.submit_date.strftime('%d/%m/%Y')"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="account_pnd36_report_paper" model="report.paperformat">
+        <field name="name">PND36</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="disable_shrinking" eval="True"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <record id="account_pnd36_report_action" model="ir.actions.report">
+        <field name="name">PND36</field>
+        <field name="model">account.pp36</field>
+        <field name="report_name">account_invoice.account_pnd36_report_document</field>
+        <field name="report_file">account_invoice.account_pnd36_report_document</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="print_report_name">('PND36 - %s' % (object.name))</field>
+        <field name="paperformat_id" ref="account_invoice.account_pnd36_report_paper" />
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

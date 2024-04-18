@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_pp30_user,account.pp30,model_account_pp30,account.group_account_user,1,1,1,1
+access_account_pp30_manager,account.pp30,model_account_pp30,account.group_account_manager,1,1,1,1
+access_account_pnd54_user,account.pnd54,model_account_pnd54,account.group_account_user,1,1,1,1
+access_account_pnd54_manager,account.pnd54,model_account_pnd54,account.group_account_manager,1,1,1,1
+access_account_pp36_user,account.pp36,model_account_pp36,account.group_account_user,1,1,1,1
+access_account_pp36_manager,account.pp36,model_account_pp36,account.group_account_manager,1,1,1,1
+access_account_pnd1_user,account.pnd1,model_account_pnd1,account.group_account_user,1,1,1,1
+access_account_pnd1_manager,account.pnd1,model_account_pnd1,account.group_account_manager,1,1,1,1
+access_account_pnd1g_user,account.pnd1g,model_account_pnd1g,account.group_account_user,1,1,1,1
+access_account_pnd1g_manager,account.pnd1g,model_account_pnd1g,account.group_account_manager,1,1,1,1
+access_account_pnd3_user,account.pnd3,model_account_pnd3,account.group_account_user,1,1,1,1
+access_account_pnd3_manager,account.pnd3,model_account_pnd3,account.group_account_manager,1,1,1,1
+access_account_pnd53_user,account.pnd53,model_account_pnd53,account.group_account_user,1,1,1,1
+access_account_pnd53_manager,account.pnd53,model_account_pnd53,account.group_account_manager,1,1,1,1

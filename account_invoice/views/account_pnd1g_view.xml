@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="account_pnd1g_form"  model="ir.ui.view">
+        <field name="name">account.pnd1g.form</field>
+        <field name="model">account.pnd1g</field>
+        <field name="arch" type="xml">
+            <form string="PND1G" >
+                <header>
+                    <button name="action_print_pnd1g" string="Print PND1G" type="object" />
+                </header>
+                <sheet>
+                    <h1>
+                        <label string="No." for="name" />
+                        <field name="name" />
+                    </h1>
+                    <field name="partner_id" />
+                    <group>
+                        <group>
+                            <field name="normal_confirm" string="ยื่นปกติ"/>
+                            <field name="further_confirm" string="ยื่นเพิ่มเติมครั้งที่"/>
+                            <field name="further_time" string="" invisible="further_confirm == False"/>
+                            <field name="submit_date" string="ยื่นวันที่"/>
+                        </group>
+                        <group>
+                            <field name="vat_year" string="รายการภาษีเงินได้หัก ณ ที่จ่าย ประจำาปีภาษี"/>
+                        </group>
+                        <group>
+                            <field name="attachment" string="ใบแนบ ภ.ง.ด.1 ที่แนบมาพร้อมนี้ :"/>
+                            <field name="attachment_qty" string="จำนวน"/>
+                            <field name="recording" string="สื่อบันทึกในระบบคอมพิวเตอร์ ที่แนบมาพร้อมนี้ : จำานวน"/>
+                            <field name="recording_qty" string="จำนวน"/>
+                            <field name="register_number" string="ตามหนังสือแสดงความประสงค์ฯ ทะเบียนรับเลขที่"/>
+                            <field name="register_ref" string="หรือตามหนังสือข้อตกลงการใช้งานฯ เลขอ้างอิงการลงทะเบียน."/>
+                        </group>
+                    </group>
+                    <group string="สรุปรายการภาษีที่นำาส่ง ">
+                        <group string="1. เงินได้ตามมาตรา 40 (1) เงินเดือน ค่าจ้าง ฯลฯ กรณีทั่วไป">
+                            <field name="general_wages_qty" string="จำนวนราย"/>
+                            <field name="general_total_income" string="เงินได้ทั้งสิ้น"/>
+                            <field name="general_vat" string="ภาษีที่นำส่งทั้งสิ้น"/>
+                        </group>
+                        <group string="2. เงินได้ตามมาตรา 40 (1) เงินเดือน ค่าจ้าง ฯลฯ กรณีได้รับอนุมัติจากกรมสรรพากรให้หักอัตราร้อยละ 3">
+                            <field name="according" string="ตามหนังสือที่" />
+                            <field name="according_date" string="ลงวันที่"/>
+                            <field name="according_qty" string="จำนวนราย"/>
+                            <field name="according_total_income" string="เงินได้ทั้งสิ้น"/>
+                            <field name="according_vat" string="ภาษีที่นำส่งทั้งสิ้น"/>
+                        </group>
+                        <group string="3. เงินได้ตามมาตรา 40 (1) (2) กรณีนายจ้างจ่ายให้ครั้งเดียวเพราะเหตุออกจากงาน">
+                            <field name="one_time_qty" string="จำนวนราย"/>
+                            <field name="one_time_total_income" string="เงินได้ทั้งสิ้น"/>
+                            <field name="one_time_vat" string="ภาษีที่นำส่งทั้งสิ้น"/>
+                        </group>
+                        <group string="4. เงินได้ตามมาตรา 40 (2) กรณีผู้รับเงินได้เป็นผู้อยู่ในประเทศไทย">
+                            <field name="in_country_qty" string="จำนวนราย"/>
+                            <field name="in_country_total_income" string="เงินได้ทั้งสิ้น"/>
+                            <field name="in_country_vat" string="ภาษีที่นำส่งทั้งสิ้น"/>
+                        </group>
+                        <group string="5. เงินได้ตามมาตรา 40 (2) กรณีผู้รับเงินได้มิได้้้เป็นผู้อยู่ในประเทศไทย">
+                            <field name="out_country_qty" string="จำนวนราย"/>
+                            <field name="out_country_total_income" string="เงินได้ทั้งสิ้น"/>
+                            <field name="out_country_vat" string="ภาษีที่นำส่งทั้งสิ้น"/>
+                        </group>
+                        <group string="6. รวม">
+                            <field name="sum_qty" string="จำนวนราย"/>
+                            <field name="sum_total_income" string="เงินได้ทั้งสิ้น"/>
+                            <field name="sum_vat" string="ภาษีที่นำส่งทั้งสิ้น"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_pnd1g_tree"  model="ir.ui.view">
+        <field name="name">account.pnd1g.tree</field>
+        <field name="model">account.pnd1g</field>
+        <field name="arch" type="xml">
+            <tree string="PND1G">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="account_pnd1g_action" model="ir.actions.act_window">
+        <field name="name">PND1G</field>
+        <field name="res_model">account.pnd1g</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="PND1G" id="menu_account_pnd1g" parent="account_invoice.menu_account_vat_type" sequence="5" action="account_pnd1g_action"/>
+</odoo>
