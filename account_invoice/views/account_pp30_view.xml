@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="account_pp30_form"  model="ir.ui.view">
+        <field name="name">account.pp30.form</field>
+        <field name="model">account.pp30</field>
+        <field name="arch" type="xml">
+            <form string="PP30" >
+                <header>
+                    <button name="action_print_pnd30" string="Print PP30" type="object" />
+                </header>
+                <sheet>
+                    <h1>
+                        <label string="No." for="name" />
+                        <field name="name" />
+                    </h1>
+                    <field name="partner_id"/>
+                    <group>
+                        <group string="กรณีมีสาขา ยื่นแบบแสดงรายการโดย :">
+                            <field name="document_item" string="(1) แยกยื่นเป็นรายสถานประกอบการ เป็นแบบฯ ของ"/>
+                            <field name="head_company" string="(1.1) สำนักงานใหญ่"/>
+                            <field name="branch" string="(1.2) สาขาที่"/>
+                            <field name="branch_code" invisible="branch == False" string=""/>
+                            <field name="documents_together" string="(2) ยื่นรวมกันที่ (ตามที่ได้ยื่นคำขอฯและได้รับอนุมัติแล้ว)"/>
+                            <field name="head_company_to" string="(2.1) สำนักงานใหญ่"/>
+                            <field name="branch_to" string="(2.2) สาขาที่"/>
+                            <field name="branch_code_to" invisible="branch_to == False" string=""/>
+                            <field name="submit_date" string="ยื่นวันที่"/>
+                        </group>
+                        <group>
+                            <field name="normal_confirm" string="ยื่นปกติ"/>
+                            <field name="further_confirm" string="ยื่นเพิ่มเติมครั้งที่"/>
+                            <field name="further_time" string="" invisible="further_confirm == False"/>
+                            <field name="dead_line" string="ภายในกำหนดเวลา"/>
+                            <field name="over_due" string="เกินกำหนดเวลา"/>
+                            <field name="year" string="พ.ศ."/>
+                            <field name="month_selected" string="สำหรับเดือนภาษี"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="ภาษีขาย">
+                            <field name="sale_month" string="1.ยอดขายในเดือนนี้"/>
+                            <field name="sale_amount" string="(1.1)ยอดขายแจ้งไว้ขาด"/>
+                            <field name="purchase_amount" string="(1.2)ยอดซื้อแจ้งไว้เกิน"/>
+                            <field name="sale_tax_rate" string="2.ลบ ยอดขายที่เสียภาษีในอัตราร้อยละ 0 (ถ้ามี) "/>
+                            <field name="exempted_sales" string="3.ลบ ยอดขายที่ได้รับยกเว้น (ถ้ามี)"/>
+                            <field name="taxable_sale" string="4.ยอดขายที่ต้องเสียภาษี (1.- 2. - 3.)"/>
+                            <field name="sale_tax_month" string="5.ภาษีขายเดือนนี้ "/>
+                        </group>
+                        <group string="ภาษีซื้อ">
+                            <field name="purchase_tax_amount" string="6.ยอดซื้อที่มีสิทธินำภาษีซื้อ"/>
+                            <field name="purchase_vat_amount" string="(6.1)ยอดซื้อแจ้งไว้ขาด"/>
+                            <field name="sale_vat_amount" string="(6.2)ยอดขายแจ้งไว้เกิน"/>
+                            <field name="purchase_tax_month" string="7.ภาษีซื้อเดือนนี้ (ตามหลักฐานใบกำกับภาษีของยอดซื้อตาม 6.) "/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="ภาษีมูลค่าเพิ่ม">
+                            <field name="tax_due_month" string="8.ภาษีที่ต้องชำระเดือนนี้ (ถ้า 5 มากกว่า 7 )"/>
+                            <field name="tax_paid_month" string="9.ภาษีที่ชำระเกินเดือนนี้ (ถ้า 5 น้อยกว่า 7 ) ."/>
+                            <field name="tax_paid_access" string="10.ภาษีที่ชำระเกินยกมา "/>
+                        </group>
+                        <group string="ภาษีสุทธิ">
+                            <field name="net_tax_paid" string="11.ต้องชำระ (ถ้า 8. มากกว่า 10.)"/>
+                            <field name="tax_paid" string="ต้องชำระ" invisible="net_tax_paid == False"/>
+                            <field name="net_tax_over_paid" string="12.ชำระเกิน ((ถ้า 10. มากกว่า 8.) หรือ (9. รวมกับ 10.))"/>
+                            <field name="tax_over_paid" string="ชำระเกิน" invisible="net_tax_over_paid == False"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="กรณียื่นแบบแสดงรายการชำระภาษีเกินกำหนดเวลา หรือยื่นเพิ่มเติม">
+                            <field name="extra_money" string="13.เงินเพิ่ม"/>
+                            <field name="fine" string="14.เบี้ยปรับ"/>
+                            <field name="total_extra_money" string="15.รวมภาษี เงินเพิ่ม และเบี้ยปรับที่ต้องชำระ ((11. + 13. + 14.) หรือ (13. + 14. - 12.))"/>
+                            <field name="total_fine" string="16.รวมภาษีที่ชำระเกิน หลังคำนวณเงินเพิ่มและเบี้ยปรับแล้ว (12. - 13. - 14.)"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_pp30_tree"  model="ir.ui.view">
+              <field name="name">account.pp30.tree</field>
+              <field name="model">account.pp30</field>
+              <field name="arch" type="xml">
+                <tree string="PP30">
+                    <field name="name"/>
+                </tree>
+              </field>
+        </record>
+
+    <record id="account_pnd30_action" model="ir.actions.act_window">
+            <field name="name">PP30</field>
+            <field name="res_model">account.pp30</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <menuitem name="VAT" parent="account_wht.menu_account_account" id="menu_account_vat_type" sequence="2" />
+    <menuitem name="PP30" id="menu_account_pp30" parent="menu_account_vat_type" sequence="1" action="account_pnd30_action"/>
+
+</odoo>

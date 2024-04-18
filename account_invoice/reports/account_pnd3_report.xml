@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="account_pnd3_report_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="article o_report_pnd3_bg">
+                    <div class="row" style="font-size: 18px;position: absolute;left:84mm;top:49mm;width:160mm;">
+                        <div class="col-7">
+                            <div t-if="doc.partner_id.vat">
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[0]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[:1]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[1:2]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[2:3]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.partner_id.vat[3:4]"/></span>
+                                <span style="margin-left: 4mm;"><t t-esc="doc.partner_id.vat[4:5]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[5:6]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[6:7]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[7:8]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.partner_id.vat[8:9]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[9:10]"/></span>
+                                <span style="margin-left: 1mm;"><t t-esc="doc.partner_id.vat[10:11]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[11:12]"/></span>
+                            </div>
+                            <div style="position: absolute;float: right;top:16mm;left:64mm;">
+                                <t t-if="doc.partner_id.pnd_branch">
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[0]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[1]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[2]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[3]"/>
+                                    <span style="margin-right: 1mm;" t-esc="doc.partner_id.pnd_branch[4]"/>
+                                </t>
+                            </div>
+                            <div style="position: absolute;top:23mm;left:-50mm;">
+                                <span t-field="doc.partner_id.name"/>
+                            </div>
+                            <div style="top:32mm;left:-28mm;position: absolute;">
+                                <span t-field="doc.partner_id.local_thai_building"/>
+                            </div>
+                            <div style="position: absolute;top:32mm;left:18mm;">
+                                <span t-field="doc.partner_id.local_thai_room"/>
+                            </div>
+                            <div style="position: absolute;top:32mm;left:38mm;">
+                                <span t-field="doc.partner_id.local_thai_floor"/>
+                            </div>
+                            <div style="top:32mm;left:63mm;position: absolute;">
+                                <span t-field="doc.partner_id.local_thai_village"/>
+                            </div>
+                            <div style="top:40mm;left:-36mm;position: absolute;">
+                                <span t-field="doc.partner_id.local_thai_number"/>
+                            </div>
+                            <div style="top:40mm;left:4mm;position: absolute;">
+                                <span t-field="doc.partner_id.local_thai_moo"/>
+                            </div>
+                            <div style="top:40mm;left:34mm;position: absolute;">
+                                <span t-field="doc.partner_id.local_thai_alley"/>
+                            </div>
+                            <div style="top:48mm;left:-40mm;position: absolute;">
+                                <span t-field="doc.partner_id.local_thai_road"/>
+                            </div>
+                            <div style="top:48mm;left:36mm;position: absolute;">
+                                <span t-field="doc.partner_id.local_street2"/>
+                            </div>
+                            <div style="top:56mm;left:-30mm;position: absolute;">
+                                <span t-field="doc.partner_id.local_city"/>
+                            </div>
+                            <div style="top:56mm;left:34mm;position: absolute;">
+                                <span t-field="doc.partner_id.local_state"/>
+                            </div>
+                            <div style="top:64mm;left:-30mm;position: absolute;">
+                                <t t-if="doc.partner_id.local_zip">
+                                    <span t-esc="doc.partner_id.local_zip[0]"/>
+                                    <span style="margin-left:2mm;" t-esc="doc.partner_id.local_zip[1]"/>
+                                    <span style="margin-left:2mm;" t-esc="doc.partner_id.local_zip[2]"/>
+                                    <span style="margin-left:2mm;" t-esc="doc.partner_id.local_zip[3]"/>
+                                    <span style="margin-left:1mm;" t-esc="doc.partner_id.local_zip[4]"/>
+                                </t>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div style="top:10mm;position: absolute;left:191mm;font-size: 16px;">
+                                <span t-esc="doc.year"/>
+                            </div>
+                            <div style="top:22mm;position: absolute;left:95mm;">
+                                <span t-if="doc.month_selected == '01'">✔</span>
+                                <span style="margin-left:28mm;" t-if="doc.month_selected == '04'">✔</span>
+                                <span style="margin-left:57mm;" t-if="doc.month_selected == '07'">✔</span>
+                                <span style="margin-left:85mm;" t-if="doc.month_selected == '10'">✔</span>
+                            </div>
+                            <div style="top:34mm;position: absolute;left:95mm;">
+                                <span t-if="doc.month_selected == '02'">✔</span>
+                                <span style="margin-left:28mm;" t-if="doc.month_selected == '05'">✔</span>
+                                <span style="margin-left:57mm;" t-if="doc.month_selected == '08'">✔</span>
+                                <span style="margin-left:85mm;" t-if="doc.month_selected == '11'">✔</span>
+                            </div>
+                            <div style="top:46mm;position: absolute;left:95mm;">
+                                <span t-if="doc.month_selected == '03'">✔</span>
+                                <span style="margin-left:28mm;" t-if="doc.month_selected == '06'">✔</span>
+                                <span style="margin-left:57mm;" t-if="doc.month_selected == '09'">✔</span>
+                                <span style="margin-left:85mm;" t-if="doc.month_selected == '12'">✔</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:100mm;">
+                        <div class="col-12" style="font-size: 18px;">
+                            <div style="position: absolute;left:46mm;top:34mm;">
+                                <span t-if="doc.normal_confirm">✔</span>
+                            </div>
+                            <div style="position: absolute;left:51mm;top:34mm;">
+                                <span style="margin-left:43mm;" t-if="doc.further_confirm">✔</span>
+                            </div>
+                            <div style="position: absolute;left:101mm;top:33mm;">
+                                <span style="margin-left:47mm;font-size: 16px;" t-esc="doc.further_time"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:120mm;">
+                        <div class="col-12" style="font-size: 18px;">
+                            <div style="position: absolute;left:68mm;top:35mm;">
+                                <span t-if="doc.remit_tax == 'r1'">✔</span>
+                            </div>
+                            <div style="position: absolute;left:127mm;top:35mm;">
+                                <span t-if="doc.remit_tax == 'r2'">✔</span>
+                            </div>
+                            <div style="position: absolute;left:186mm;top:35mm;">
+                                <span t-if="doc.remit_tax == 'r3'">✔</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:120mm;">
+                        <div class="col-7" style="font-size: 24px;">
+                            <div style="position: absolute;top:50mm;left:142mm;">
+                                <span t-if="doc.attachment">✔</span>
+                            </div>
+                            <div style="position: absolute;top:77mm;left:142mm;">
+                                <span t-if="doc.recording">✔</span>
+                            </div>
+                        </div>
+                        <div class="col-5" style="font-size: 16px;">
+                            <div style="position: absolute;top:52mm;left:267mm;">
+                                <span style="margin-" t-esc="doc.attachment_qty"/>
+                            </div>
+                            <div style="position: absolute;top:60mm;left:267mm;">
+                                <span style="margin-" t-esc="doc.attachment_qty_qty"/>
+                            </div>
+                            <div style="position: absolute;top:78mm;left:267mm;">
+                                <span t-esc="doc.recording_qty"/>
+                            </div>
+                            <div style="position: absolute;top:88mm;left:267mm;">
+                                <span t-esc="doc.recording_qty_qty"/>
+                            </div>
+                            <div style="position: absolute;top:96mm;left:236mm;">
+                                <span t-esc="doc.register_number"/>
+                            </div>
+                            <div style="position: absolute;top:103mm;left:254mm;">
+                                <span t-esc="doc.register_ref"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:150mm;">
+                        <div class="col-7"/>
+                        <div class="col-5" style="font-size: 18px;">
+                            <div style="position: absolute;top:101mm;right:41mm;">
+                                <span t-esc="'{0:,.2f}'.format(doc.total_money)"/>
+                            </div>
+                            <div style="position: absolute;top:110mm;right:41mm;">
+                                <span t-esc="'{0:,.2f}'.format(doc.total_tax)"/>
+                            </div>
+                            <div style="position: absolute;top:118mm;right:41mm;">
+                                <span t-esc="'{0:,.2f}'.format(doc.extra_money)"/>
+                            </div>
+                            <div style="position: absolute;top:128mm;right:41mm;">
+                                <span t-esc="'{0:,.2f}'.format(doc.total)"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="account_pnd3_report_paper" model="report.paperformat">
+        <field name="name">PND3</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="disable_shrinking" eval="True"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <record id="account_pnd3_report_action" model="ir.actions.report">
+        <field name="name">PND3</field>
+        <field name="model">account.pnd3</field>
+        <field name="report_name">account_invoice.account_pnd3_report_document</field>
+        <field name="report_file">account_invoice.account_pnd3_report_document</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="print_report_name">('PND3 - %s' % (object.name))</field>
+        <field name="paperformat_id" ref="account_invoice.account_pnd3_report_paper" />
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="account_pnd54_form"  model="ir.ui.view">
+        <field name="name">account.pnd54.form</field>
+        <field name="model">account.pnd54</field>
+        <field name="arch" type="xml">
+            <form string="PND54" >
+                <header>
+                    <button name="action_print_pnd54" string="Print PND54" type="object" />
+                </header>
+                <sheet>
+                    <h1>
+                        <label string="No." for="name" />
+                        <field name="name" />
+                    </h1>
+                    <field name="partner_id" />
+                    <field name="submit_date" string="ยื่นวันที่"/>
+                    <group>
+                        <group string="การจ่ายเงินได้ตามมาตรา 70 แห่งประมวลรัษฎากร">
+                            <field name="payee_name" string="ชื่อผู้รับเงินได้."/>
+                            <field name="office_location" string="สำนักงานตั้งอยู่ เลขที่"/>
+                            <field name="street" string="ถนน" />
+                            <field name="city" string="เมือง"/>
+                            <field name="country_id" string="ประเทศ"/>
+                        </group>
+                        <group string="การนำส่งภาษี">
+                            <field name="tax_deducted" string="(1) ภาษีหักจากเงินได้ที่จ่าย ตามมาตรา 70 แห่งประมวลรัษฎากร"/>
+                            <field name="tax_on_sale" string="(2) ภาษีจากการจำหน่ายเงินกำไรหรือที่ถือได้ว่าเป็นเงินกำไร ตามมาตรา 70 ทวิ แห่งประมวลรัษฎากร"/>
+                            <field name="normal_confirm" string="ยื่นปกติ"/>
+                            <field name="further_confirm" string="ยื่นเพิ่มเติมครั้งที่"/>
+                            <field name="further_time" string="" invisible="further_confirm == False"/>
+                        </group>
+                    </group>
+                    <group string="1. ประเภทเงินได้ที่จ่าย">
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div>
+                                <span>(1) ค่าธรรมเนียม ค่านายหน้า หรืออื่นๆ ตามมาตรา 40(2) <field name="fee" string=""/></span><br/>
+                                <span>(2) ค่าสิทธิในงานวรรณกรรม ศิลป และวิทยาศาสตร์ ตามมาตรา 40(3) <field name="royalties" string=""/></span><br/>
+                                <span>(3) ค่าสิทธิในสิทธิบัตร สูตรหรือกรรมวิธี ตามมาตรา 40(3) <field name="patent_royalties" string=""/></span><br/>
+                                <span>(4) ค่าสิทธิอื่นๆ ตามมาตรา 40(3) <field name="other_royalties" string=""/></span><br/>
+                                <span>(5) ดอกเบี้ยตามมาตรา 40 (4) (ก) ที่จ่ายให้แก่ธนาคาร กิจการประกันภัย หรือกิจการอื่นทำนองเดียวกัน <field name="interest" string=""/></span><br/>
+                                <span>(6) ดอกเบี้ยอื่นๆ ตามมาตรา 40 (4) (ก) <field name="other_interest" string=""/></span><br/>
+                                <span>(7) เงินปันผล ตามมาตรา 40 (4) (ข) <field name="dividend" string=""/></span><br/>
+                                <span>(8) เงินได้อื่นๆ ตามมาตรา 40(4) (ระบุ) <field name="other_income_bool" string=""/></span><br/>
+                                <span><field name="other_income" string="" invisible="other_income_bool == False"/></span><br/>
+                                <span>(9) ค่าเช่าเรือเดินทะเลฯ ตามกฎหมายว่าด้วยการส่งเสริมพาณิชย์นาวี <field name="boat_rental_fees" string=""/></span><br/>
+                                <span>(10) ค่าเช่าหรือเงินหรือประโยชน์อย่างอื่น ตามมาตรา 40 (5) <field name="other_rental_fees" string=""/></span><br/>
+                                <span>(11) เงินได้จากวิชาชีพอิสระ ตามมาตรา 40 (6) (ระบุ). <field name="income_independent_bool" string=""/></span><br/>
+                                <span><field name="income_independent" string="" invisible="income_independent_bool == False"/></span>
+                            </div>
+                        </div>
+                    </group>
+                    <group>
+                        <group string="2. การคำนวณภาษี">
+                            <field name="income" string="(1) เงินได้พึงประเมินที่จ่าย"/>
+                            <field name="tax_money" string="(2) เงินภาษีที่นำส่งในอัตรา"/>
+                            <field name="percentage" string="ร้อยละ" />
+                            <field name="extra_money" string="(3) เงินเพิ่ม (ถ้ามี)"/>
+                            <field name="total" string="(4) รวมเป็นเงินทั้งสิ้น"/>
+                            <field name="deducted" string="หักนำส่ง"/>
+                            <field name="issue_taxes" string="ออกภาษีให้"/>
+                        </group>
+                        <group string="3. วันเดือนปีที่จ่ายเงินได้ซึ่งต้องหักภาษีจากเงินได้ที่จ่ายตามมาตรา 70">
+                            <field name="tax_date" string="วันที่/เดือน/ปี" />
+                            <field name="currency_ex_ref" string="เลขที่เอกสารแลกเปลี่ยนเงินตรา"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="การจำหน่ายเงินกำไรตามมาตรา 70 ทวิ แห่งประมวลรัษฎากร">
+                            <field name="office_sold" string="ชื่อสำนักงานใหญ่ที่ได้รับการจำหน่ายเงินกำไร"/>
+                             <field name="number_address" string="เลขที่"/>
+                            <field name="street_address" string="ถนน"/>
+                            <field name="city_address" string="เมือง"/>
+                            <field name="country_country_id" string="ประเทศ"/>
+                            <field name="profit" string="เงินกำไรที่ถือได้ว่าเป็นกำไรที่จำหน่าย"/>
+                            <field name="remittance_tax" string="เงินภาษีที่ต้องเสียและนำส่ง"/>
+                            <field name="extra_moneys" string="เงินเพิ่ม (ถ้ามี)"/>
+                            <field name="total_money" string="รวมเป็นเงินทั้งสิ้น"/>
+                            <field name="date_70_tw" string="วัน/เดือน/ปี"/>
+                            <field name="tw_number" string="เลขที่เอกสารแลกเปลี่ยนเงินตรา"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_pnd54_tree"  model="ir.ui.view">
+        <field name="name">account.pnd54.tree</field>
+        <field name="model">account.pnd54</field>
+        <field name="arch" type="xml">
+            <tree string="PND54">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="account_pnd54_action" model="ir.actions.act_window">
+        <field name="name">PND54</field>
+        <field name="res_model">account.pnd54</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="PND54" id="menu_account_pnd54" parent="account_invoice.menu_account_vat_type" sequence="3" action="account_pnd54_action"/>
+</odoo>
