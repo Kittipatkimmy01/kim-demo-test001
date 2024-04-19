@@ -14,6 +14,8 @@
                         <field name="name" />
                     </h1>
                     <field name="partner_id"/>
+                    <field name="user_id" string="ชื่อผู้ประกอบการ"/>
+                    <field name="submit_date" string="ยื่นวันที่"/>
                     <group>
                         <group string="กรณีมีสาขา ยื่นแบบแสดงรายการโดย :">
                             <field name="document_item" string="(1) แยกยื่นเป็นรายสถานประกอบการ เป็นแบบฯ ของ"/>
@@ -24,7 +26,6 @@
                             <field name="head_company_to" string="(2.1) สำนักงานใหญ่"/>
                             <field name="branch_to" string="(2.2) สาขาที่"/>
                             <field name="branch_code_to" invisible="branch_to == False" string=""/>
-                            <field name="submit_date" string="ยื่นวันที่"/>
                         </group>
                         <group>
                             <field name="normal_confirm" string="ยื่นปกติ"/>

@@ -82,6 +82,7 @@ class AccountPP30(models.Model):
 
     pay_payment = fields.Char()
     submit_date = fields.Date()
+    user_id = fields.Many2one('res.users', 'ลงชื่อผู้ประกอบการ')
 
     def action_print_pnd36(self):
         return self.env.ref('account_invoice.account_pnd36_report_action').report_action(self)

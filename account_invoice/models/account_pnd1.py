@@ -60,6 +60,7 @@ class AccountPND1(models.Model):
     sum_total_vat = fields.Float()
 
     submit_date = fields.Date()
+    user_id = fields.Many2one('res.users', 'ลงชื่อผู้ประกอบการ')
 
     def action_print_pnd1(self):
         return self.env.ref('account_invoice.account_pnd1_report_action').report_action(self)

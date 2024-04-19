@@ -37,6 +37,7 @@ class AccountPND53(models.Model):
     total = fields.Float()
 
     submit_date = fields.Date()
+    user_id = fields.Many2one('res.users', 'ลงชื่อผู้ประกอบการ')
 
     def action_print_pnd53(self):
         return self.env.ref('account_invoice.account_pnd53_report_action').report_action(self)

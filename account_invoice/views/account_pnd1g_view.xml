@@ -16,6 +16,7 @@
                     <field name="partner_id" />
                     <group>
                         <group>
+                            <field name="user_id" string="ชื่อผู้ประกอบการ"/>
                             <field name="normal_confirm" string="ยื่นปกติ"/>
                             <field name="further_confirm" string="ยื่นเพิ่มเติมครั้งที่"/>
                             <field name="further_time" string="" invisible="further_confirm == False"/>
