@@ -18,27 +18,27 @@
                                 <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[8:9]"/></span>
                                 <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[9:10]"/></span>
                                 <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[10:11]"/></span>
-                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[11:12]"/></span>
+                                <span style="margin-left: 4mm;"><t t-esc="doc.partner_id.vat[11:12]"/></span>
                             </div>
-                            <div style="float: right;position: absolute;top:9mm;left:64mm;">
+                            <div style="float: right;position: absolute;top:10mm;left:60mm;">
                                 <t t-if="doc.partner_id.pnd_branch">
                                     <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[0]"/>
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[1]"/>
+                                    <span style="margin-right: 2.5mm;" t-esc="doc.partner_id.pnd_branch[1]"/>
                                     <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[2]"/>
                                     <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[3]"/>
-                                    <span style="margin-right: 1mm;" t-esc="doc.partner_id.pnd_branch[4]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[4]"/>
                                 </t>
                             </div>
                         </div>
                         <div class="col-5">
-                            <div style="position: absolute;top:1mm;left:98mm;">
+                            <div style="position: absolute;top:1mm;left:95mm;">
                                 <span t-if="doc.document_item">✔</span>
                             </div>
-                            <div style="position: absolute;top:7mm;left:110mm;width:100mm;">
+                            <div style="position: absolute;top:8mm;left:106mm;width:100mm;">
                                 <span t-if="doc.head_company">✔</span>
-                                <span style="margin-left:44mm;" t-if="doc.branch">✔</span>
+                                <span style="margin-left:38mm;" t-if="doc.branch">✔</span>
                                 <t t-if="doc.branch_code">
-                                    <span style="margin-left:24mm;" t-esc="doc.branch_code[0]"/>
+                                    <span style="margin-left:23.5mm;" t-esc="doc.branch_code[0]"/>
                                     <span style="margin-left:2mm;" t-esc="doc.branch_code[1]"/>
                                     <span style="margin-left:2mm;" t-esc="doc.branch_code[2]"/>
                                     <span style="margin-left:2mm;" t-esc="doc.branch_code[3]"/>
@@ -52,16 +52,16 @@
                             <div style="margin-top:6mm;margin-left:50mm;position: absolute; width:100mm;">
                                 <span t-esc="doc.partner_id.name"/>
                             </div>
-                            <div style="position:absolute;top:22mm;left:60mm;">
+                            <div style="position:absolute;top:23mm;left:60mm;">
                                 <span t-field="doc.partner_id.local_name"/>
                             </div>
-                            <div style="position: absolute;top:31mm;left:46mm;width:80mm;">
+                            <div style="position: absolute;top:31mm;left:43mm;width:80mm;">
                                 <span t-field="doc.partner_id.local_thai_building"/>
                             </div>
                             <div style="position: absolute;top:39mm;left:25mm;">
                                 <span style="margin-left:8mm;" t-field="doc.partner_id.local_thai_moo"/>
                             </div>
-                            <div style="position: absolute;top:39mm;left:86mm;">
+                            <div style="position: absolute;top:39mm;left:83mm;">
                                 <span t-field="doc.partner_id.local_thai_number"/>
                             </div>
                             <div style="position: absolute;top:47mm;">
@@ -85,72 +85,80 @@
                         </div>
                         <div class="col-3">
                             <div style="position: absolute;top:31mm;left:162mm;">
-                                <span style="margin-left:-30mm;" t-field="doc.partner_id.local_thai_room"/>
-                                <span style="margin-right:6mm;float: right;" t-field="doc.partner_id.local_thai_floor"/>
+                                <span style="margin-left:-33mm;" t-field="doc.partner_id.local_thai_room"/>
                             </div>
-                            <div style="position: absolute;top:39mm;left:102mm;">
+                            <div style="position: absolute;top:31mm;left:158mm;">
+                                <span t-field="doc.partner_id.local_thai_floor"/>
+                            </div>
+                            <div style="position: absolute;top:40mm;left:102mm;">
                                 <span style="margin-left:11mm;" t-field="doc.partner_id.local_thai_moo"/>
                             </div>
-                            <div style="position: absolute;top:39mm;left:141mm;">
+                            <div style="position: absolute;top:40mm;left:141mm;">
                                 <span style="margin-right:8mm;float: right;" t-field="doc.partner_id.local_thai_alley"/>
                             </div>
-                            <div style="position: absolute;top:55mm;left:40mm;">
+                            <div style="position: absolute;top:56mm;left:40mm;">
                                 <span t-field="doc.partner_id.local_street2"/>
                             </div>
-                            <div style="position: absolute;top:55mm;left:116mm;">
+                            <div style="position: absolute;top:56mm;left:116mm;">
                                 <span t-field="doc.partner_id.local_state"/>
                             </div>
                         </div>
                         <div class="col-5">
-                            <div style="position: absolute;top:1mm;left:176mm">
+                            <div style="position: absolute;top:1mm;left:173mm">
                                 <span t-if="doc.documents_together">✔</span>
                             </div>
-                            <div style="position: absolute;top:7mm;left:188mm">
+                            <div style="position: absolute;top:7mm;left:184mm">
                                 <span t-if="doc.head_company_to">✔</span>
-                                <span style="margin-left:44mm;" t-if="doc.branch_to">✔</span>
+                                <span style="margin-left:38mm;" t-if="doc.branch_to">✔</span>
                                 <t t-if="doc.branch_code_to">
-                                    <span style="margin-left:24mm;" t-esc="doc.branch_code_to[0]"/>
+                                    <span style="margin-left:23.5mm;" t-esc="doc.branch_code_to[0]"/>
                                     <span style="margin-left:2mm;" t-esc="doc.branch_code_to[1]"/>
                                     <span style="margin-left:2mm;" t-esc="doc.branch_code_to[2]"/>
                                     <span style="margin-left:2mm;" t-esc="doc.branch_code_to[3]"/>
                                     <span style="margin-left:2mm;" t-esc="doc.branch_code_to[4]"/>
                                 </t>
                             </div>
-                            <div style="position: absolute;top:16mm;left:178mm">
+                            <div style="position: absolute;top:17mm;left:174mm">
                                 <span style="margin-left:-3mm;" t-if="doc.normal_confirm">✔</span>
-                                <span style="margin-left:16mm;" t-if="doc.further_confirm">✔</span>
-                                <span style="margin-left:27mm;" t-esc="doc.further_time"/>
-                                <span style="margin-left:34mm;" t-if="doc.dead_line">✔</span>
                             </div>
-                            <div style="position: absolute;top:14mm;left:179mm;">
+                            <div style="position: absolute;top:17mm;left:190mm">
+                                <span t-if="doc.further_confirm">✔</span>
+                            </div>
+                            <div style="position: absolute;top:17mm;left:225mm">
+                                <span t-esc="doc.further_time"/>
+                            </div>
+                            <div style="position: absolute;top:15mm;left:260mm">
+                                <span t-if="doc.dead_line">✔</span>
+                            </div>
+                            <div style="position: absolute;top:21mm;left:175mm;">
                                 <span style="margin-left:85mm;" t-if="doc.over_due">✔</span>
                             </div>
-                            <div style="position: absolute;top:25mm;left:180mm">
+                            <div style="position: absolute;top:26mm;left:175mm">
                                 <span style="margin-left:102mm;font-size:16px;" t-esc="doc.year"/>
                             </div>
-                            <div style="position: absolute;top:32mm;left:179mm">
+                            <div style="position: absolute;top:32mm;left:174mm">
                                 <span style="margin-left:-4mm;" t-if="doc.month_selected == '01'">✔</span>
-                                <span style="margin-left:26mm;" t-if="doc.month_selected == '04'">✔</span>
-                                <span style="margin-left:55mm;" t-if="doc.month_selected == '07'">✔</span>
-                                <span style="margin-left:84mm;" t-if="doc.month_selected == '10'">✔</span>
+                                <span style="margin-left:27mm;" t-if="doc.month_selected == '04'">✔</span>
+                                <span style="margin-left:56mm;" t-if="doc.month_selected == '07'">✔</span>
+                                <span style="margin-left:85mm;" t-if="doc.month_selected == '10'">✔</span>
                             </div>
-                            <div style="position: absolute;top:38mm;left:179mm">
+                            <div style="position: absolute;top:38mm;left:174mm">
                                 <span style="margin-left:-4mm;" t-if="doc.month_selected == '02'">✔</span>
-                                <span style="margin-left:26mm;" t-if="doc.month_selected == '05'">✔</span>
-                                <span style="margin-left:55mm;" t-if="doc.month_selected == '08'">✔</span>
-                                <span style="margin-left:84mm;" t-if="doc.month_selected == '11'">✔</span>
+                                <span style="margin-left:27mm;" t-if="doc.month_selected == '05'">✔</span>
+                                <span style="margin-left:56mm;" t-if="doc.month_selected == '08'">✔</span>
+                                <span style="margin-left:85mm;" t-if="doc.month_selected == '11'">✔</span>
                             </div>
-                            <div style="position: absolute;top:45mm;left:179mm">
+                            <div style="position: absolute;top:45mm;left:174mm">
                                 <span style="margin-left:-4mm;" t-if="doc.month_selected == '03'">✔</span>
-                                <span style="margin-left:26mm;" t-if="doc.month_selected == '06'">✔</span>
-                                <span style="margin-left:55mm;" t-if="doc.month_selected == '09'">✔</span>
-                                <span style="margin-left:84mm;" t-if="doc.month_selected == '12'">✔</span>
+                                <span style="margin-left:27mm;" t-if="doc.month_selected == '06'">✔</span>
+                                <span style="margin-left:56mm;" t-if="doc.month_selected == '09'">✔</span>
+                                <span style="margin-left:85mm;" t-if="doc.month_selected == '12'">✔</span>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="position:relative;top:155mm;">
                         <div class="col-7" style="position: absolute;left:120mm;">
-                            <div >
+                            <div>
                                 <span t-if="doc.sale_amount">✔</span>
                             </div>
                             <div style="position: absolute;top:6mm;">
@@ -158,50 +166,50 @@
                             </div>
                         </div>
                         <div class="col-2" style="position: absolute;top:1mm;">
-                            <div style="position: absolute;right:-170mm;">
+                            <div style="position: absolute;right:-168mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.sale_month)"/>
                             </div>
-                            <div style="position: absolute;right:-170mm;top:10mm;">
+                            <div style="position: absolute;right:-168mm;top:10mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.sale_tax_rate)"/>
                             </div>
-                            <div style="position: absolute;right:-170mm;top:20mm;">
+                            <div style="position: absolute;right:-168mm;top:20mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.exempted_sales)"/>
                             </div>
-                            <div style="position: absolute;right:-170mm;top:30mm;">
+                            <div style="position: absolute;right:-168mm;top:30mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.taxable_sale)"/>
                             </div>
                         </div>
                         <div class="col-3" style="position: absolute;top:10mm;">
-                            <div style="position: absolute;right:-204mm;top:30mm;">
+                            <div style="position: absolute;right:-202mm;top:30mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.sale_tax_month)"/>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="position:relative;top:204mm;">
                         <div class="col-7">
-                            <div style="position:absolute;left:124mm;">
+                            <div style="position:absolute;left:121mm;">
                                 <span t-if="doc.purchase_vat_amount">✔</span>
                             </div>
-                            <div style="position:absolute;left:124mm;top:6mm;">
+                            <div style="position:absolute;left:121mm;top:6mm;">
                                 <span t-if="doc.sale_vat_amount">✔</span>
                             </div>
                         </div>
                         <div class="col-2" style="position: absolute;top:1mm;">
-                            <div style="position: absolute;right:8mm;">
+                            <div style="position: absolute;right:6mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.purchase_tax_amount)"/>
                             </div>
                         </div>
                         <div class="col-3" style="position: absolute;top:13mm;">
-                            <div style="position: absolute;right:-25mm;">
+                            <div style="position: absolute;right:-27mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.purchase_tax_month)"/>
                             </div>
-                            <div style="position: absolute;right:-25mm;top:10mm;">
+                            <div style="position: absolute;right:-27mm;top:10mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.tax_due_month)"/>
                             </div>
-                            <div style="position: absolute;right:-25mm;top:19mm;">
+                            <div style="position: absolute;right:-27mm;top:19mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.tax_paid_month)"/>
                             </div>
-                            <div style="position: absolute;right:-25mm;top:28mm;">
+                            <div style="position: absolute;right:-27mm;top:28mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.tax_paid_access)"/>
                             </div>
                         </div>
@@ -216,24 +224,24 @@
                             </div>
                         </div>
                         <div class="col-2" style="position: absolute;top:-1mm;">
-                            <div style="position: absolute;right:8mm;top:1mm;">
+                            <div style="position: absolute;right:6mm;top:1mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.tax_paid)"/>
                             </div>
-                            <div style="position: absolute;right:8mm;top:10mm;">
+                            <div style="position: absolute;right:6mm;top:10mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.tax_over_paid)"/>
                             </div>
-                            <div style="position: absolute;right:8mm;top:30mm;">
+                            <div style="position: absolute;right:6mm;top:30mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.extra_money)"/>
                             </div>
-                            <div style="position: absolute;right:8mm;top:39mm;">
+                            <div style="position: absolute;right:6mm;top:39mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.fine)"/>
                             </div>
                         </div>
                         <div class="col-3" style="position: absolute;top:13mm;">
-                            <div style="position: absolute;right:-25.5mm;top:34mm;">
+                            <div style="position: absolute;right:-28mm;top:34mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.total_extra_money)"/>
                             </div>
-                            <div style="position: absolute;right:-25.5mm;top:43mm;">
+                            <div style="position: absolute;right:-28mm;top:43mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.total_fine)"/>
                             </div>
                         </div>
@@ -242,11 +250,11 @@
                         <div class="col-7">
                             <div/>
                         </div>
-                        <div class="col-5" style="position:absolute;bottom:-10mm;right:44mm;">
-                            <div t-if="doc.partner_id.user_ids.sign_signature" style="position: absolute;right:8mm;">
-                                <img t-att-src="'data:image/png;base64,' + doc.partner_id.user_ids.sign_signature.decode('utf-8')" style="width: 200px; height: 100px;"/>
+                        <div class="col-5" style="position:absolute;bottom:-15mm;right:44mm;">
+                            <div t-if="doc.user_id.sign_signature" style="position: absolute;right:8mm;">
+                                <img t-att-src="'data:image/png;base64,' + doc.user_id.sign_signature.decode('utf-8')" style="width: 200px; height: 100px;"/>
                             </div>
-                            <div t-if="doc.submit_date" style="position: absolute;right:24mm;bottom:-32mm;">
+                            <div t-if="doc.submit_date" style="position: absolute;right:24mm;bottom:-28mm;">
                                 <span t-esc="doc.submit_date.strftime('%d/%m/%Y')"/>
                             </div>
                         </div>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="account_attach_pnd1g_form"  model="ir.ui.view">
+        <field name="name">account.attach.pnd1g.form</field>
+        <field name="model">account.attach.pnd1g</field>
+        <field name="arch" type="xml">
+            <form string="Attach PND1g">
+                <header>
+                    <button name="action_print_attach_pnd1g" string="Print Attach PND1g" type="object" />
+                </header>
+                <sheet>
+                    <h1>
+                        <label string="No." for="name" />
+                        <field name="name" />
+                    </h1>
+                    <field name="partner_id" />
+                    <field name="submit_date" />
+                    <field name="user_id" />
+                    <group>
+                        <group>
+                            <field name="money_type" widget="radio" string="ประเภทเงินได้"/>
+                            <field name="sheet"/>
+                            <field name="sheet_quantity" />
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="no_1"/>
+                            <field name="tax_01"/>
+                            <field name="amount_income"/>
+                            <field name="amount_tax"/>
+                            <field name="condition"/>
+                        </group>
+                        <group>
+                            <field name="no_2"/>
+                            <field name="tax_02"/>
+                            <field name="amount_income_02"/>
+                            <field name="amount_tax_02"/>
+                            <field name="condition_02"/>
+                        </group>
+                        <group>
+                            <field name="no_3"/>
+                            <field name="tax_03"/>
+                            <field name="amount_income_03"/>
+                            <field name="amount_tax_03"/>
+                            <field name="condition_03"/>
+                        </group>
+                        <group>
+                            <field name="no_4"/>
+                            <field name="tax_04"/>
+                            <field name="amount_income_04"/>
+                            <field name="amount_tax_04"/>
+                            <field name="condition_04"/>
+                        </group>
+                        <group>
+                            <field name="no_5"/>
+                            <field name="tax_05"/>
+                            <field name="amount_income_05"/>
+                            <field name="amount_tax_05"/>
+                            <field name="condition_05"/>
+                        </group>
+                        <group>
+                            <field name="no_6"/>
+                            <field name="tax_06"/>
+                            <field name="amount_income_06"/>
+                            <field name="amount_tax_06"/>
+                            <field name="condition_06"/>
+                        </group>
+                        <group>
+                            <field name="no_7"/>
+                            <field name="tax_07"/>
+                            <field name="amount_income_07"/>
+                            <field name="amount_tax_07"/>
+                            <field name="condition_07"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_attach_pnd1g_tree"  model="ir.ui.view">
+        <field name="name">account.attach.pnd1g.tree</field>
+        <field name="model">account.attach.pnd1g</field>
+        <field name="arch" type="xml">
+            <tree string="Attach PND1g">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="account_attach_pnd1g_action" model="ir.actions.act_window">
+        <field name="name">Attach PND1G</field>
+        <field name="res_model">account.attach.pnd1g</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Attach PND 1 G" id="menu_account_attach_pnd1g" parent="account_invoice.menu_account_vat_type" sequence="8" action="account_attach_pnd1g_action"/>
+</odoo>

@@ -399,7 +399,7 @@
                     </div>
                     <div class="row" style="position: relative;top:372mm;">
                         <div class="col-12">
-                            <div t-if="doc.user_id.sign_signature" style="position:absolute;bottom:-36mm;left:126mm;">
+                            <div t-if="doc.user_id.sign_signature" style="position:absolute;bottom:-41mm;left:122mm;">
                                 <img t-att-src="'data:image/png;base64,' + doc.user_id.sign_signature.decode('utf-8')" style="width: 200px; height: 100px;"/>
                             </div>
                             <div style="position:absolute;bottom:-39mm;left:126mm;">

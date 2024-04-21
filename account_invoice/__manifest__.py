@@ -30,6 +30,7 @@
         "views/account_pnd1g_view.xml",
         "views/account_pnd3_view.xml",
         "views/account_pnd53_view.xml",
+        "views/account_attach_pnd1g_view.xml",
         "views/res_partner_view.xml",
         "reports/account_pnd1_report.xml",
         "reports/account_pnd1g_report.xml",
@@ -38,6 +39,7 @@
         "reports/account_pnd36_report.xml",
         "reports/account_pnd3_report.xml",
         "reports/account_pnd53_report.xml",
+        "reports/account_attach_pnd1g_report_action.xml",
     ],
         "assets": {
         "web.assets_qweb": [

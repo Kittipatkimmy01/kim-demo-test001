@@ -13,3 +13,5 @@ access_account_pnd3_user,account.pnd3,model_account_pnd3,account.group_account_u
 access_account_pnd3_manager,account.pnd3,model_account_pnd3,account.group_account_manager,1,1,1,1
 access_account_pnd53_user,account.pnd53,model_account_pnd53,account.group_account_user,1,1,1,1
 access_account_pnd53_manager,account.pnd53,model_account_pnd53,account.group_account_manager,1,1,1,1
+access_account_attach_pnd1g_user,account.attach.pnd1g,model_account_attach_pnd1g,account.group_account_user,1,1,1,1
+access_account__attach_pnd1g_manager,account.attach.pnd1g,model_account_attach_pnd1g,account.group_account_manager,1,1,1,1

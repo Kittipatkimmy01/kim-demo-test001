@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="account_attach_pnd1g_report_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="article o_report_attach_pnd1g_bg">
+                    <div class="row" style="font-size: 18px;position: absolute;left:84mm;top:49mm;width:160mm;">
+<!--                        <div class="col-7">-->
+<!--                            <div t-if="doc.partner_id.vat">-->
+<!--                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[0]"/></span>-->
+<!--                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[:1]"/></span>-->
+<!--                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[1:2]"/></span>-->
+<!--                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[2:3]"/></span>-->
+<!--                                <span style="margin-left: 3mm;"><t t-esc="doc.partner_id.vat[3:4]"/></span>-->
+<!--                                <span style="margin-left: 4mm;"><t t-esc="doc.partner_id.vat[4:5]"/></span>-->
+<!--                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[5:6]"/></span>-->
+<!--                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[6:7]"/></span>-->
+<!--                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[7:8]"/></span>-->
+<!--                                <span style="margin-left: 3mm;"><t t-esc="doc.partner_id.vat[8:9]"/></span>-->
+<!--                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[9:10]"/></span>-->
+<!--                                <span style="margin-left: 1mm;"><t t-esc="doc.partner_id.vat[10:11]"/></span>-->
+<!--                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[11:12]"/></span>-->
+<!--                            </div>-->
+<!--                            <div style="position: absolute;float: right;top:16mm;left:64mm;">-->
+<!--                                <t t-if="doc.partner_id.pnd_branch">-->
+<!--                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[0]"/>-->
+<!--                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[1]"/>-->
+<!--                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[2]"/>-->
+<!--                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[3]"/>-->
+<!--                                    <span style="margin-right: 1mm;" t-esc="doc.partner_id.pnd_branch[4]"/>-->
+<!--                                </t>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="account_attach_pnd1g_report_paper" model="report.paperformat">
+        <field name="name">Attach PND1G</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="disable_shrinking" eval="False"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <record id="account_attach_pnd1g_report_action" model="ir.actions.report">
+        <field name="name">Attach PND1G</field>
+        <field name="model">account.attach.pnd1g</field>
+        <field name="report_name">account_invoice.account_attach_pnd1g_report_document</field>
+        <field name="report_file">account_invoice.account_attach_pnd1g_report_document</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="print_report_name">('Attach PND1G - %s' % (object.name))</field>
+        <field name="paperformat_id" ref="account_invoice.account_attach_pnd1g_report_paper" />
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
