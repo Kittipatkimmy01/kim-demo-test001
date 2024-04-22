@@ -6,8 +6,8 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='vat']" position="after">
-                <field name="pnd_branch" string="Branch" invisible="not is_company"/>
-<!--                <field name="re_branch" string="Re Branch" invisible="1"/>-->
+                <field name="branch" string="Branch" invisible="not is_company"/>
+                <field name="re_branch" string="Re Branch" invisible="1"/>
             </xpath>
         </field>
     </record>
