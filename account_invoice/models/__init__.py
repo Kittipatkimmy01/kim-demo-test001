@@ -5,5 +5,5 @@ from . import account_pnd1
 from . import account_pnd1g
 from . import account_pnd3
 from . import account_pnd53
-from . import res_partner
+# from . import res_partner
 from . import account_attach_pnd1g
