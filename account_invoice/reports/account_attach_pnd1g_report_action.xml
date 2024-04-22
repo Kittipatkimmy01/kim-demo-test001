@@ -4,33 +4,320 @@
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
                 <div class="article o_report_attach_pnd1g_bg">
-                    <div class="row" style="font-size: 18px;position: absolute;left:84mm;top:49mm;width:160mm;">
-<!--                        <div class="col-7">-->
-<!--                            <div t-if="doc.partner_id.vat">-->
-<!--                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[0]"/></span>-->
-<!--                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[:1]"/></span>-->
-<!--                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[1:2]"/></span>-->
-<!--                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[2:3]"/></span>-->
-<!--                                <span style="margin-left: 3mm;"><t t-esc="doc.partner_id.vat[3:4]"/></span>-->
-<!--                                <span style="margin-left: 4mm;"><t t-esc="doc.partner_id.vat[4:5]"/></span>-->
-<!--                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[5:6]"/></span>-->
-<!--                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[6:7]"/></span>-->
-<!--                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[7:8]"/></span>-->
-<!--                                <span style="margin-left: 3mm;"><t t-esc="doc.partner_id.vat[8:9]"/></span>-->
-<!--                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[9:10]"/></span>-->
-<!--                                <span style="margin-left: 1mm;"><t t-esc="doc.partner_id.vat[10:11]"/></span>-->
-<!--                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[11:12]"/></span>-->
-<!--                            </div>-->
-<!--                            <div style="position: absolute;float: right;top:16mm;left:64mm;">-->
-<!--                                <t t-if="doc.partner_id.pnd_branch">-->
-<!--                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[0]"/>-->
-<!--                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[1]"/>-->
-<!--                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[2]"/>-->
-<!--                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[3]"/>-->
-<!--                                    <span style="margin-right: 1mm;" t-esc="doc.partner_id.pnd_branch[4]"/>-->
-<!--                                </t>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                    <div class="row" style="font-size: 18px;position: absolute;left:220mm;top:13mm;width:160mm;">
+                        <div class="col-12">
+                            <div t-if="doc.partner_id.vat">
+                                <span style="margin-left: 1mm;"><t t-esc="doc.partner_id.vat[0]"/></span>
+                                <span style="margin-left: 4mm;"><t t-esc="doc.partner_id.vat[:1]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[1:2]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[2:3]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.partner_id.vat[3:4]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[4:5]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[5:6]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[6:7]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[7:8]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.partner_id.vat[8:9]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[9:10]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[10:11]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[11:12]"/></span>
+                            </div>
+                            <div style="position: absolute;float: right;top:14mm;right:-30mm;">
+                                <t t-if="doc.partner_id.re_branch">
+                                    <span style="margin-right: 1mm;" t-esc="doc.partner_id.re_branch[0]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[1]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[2]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[3]"/>
+                                    <span style="margin-right: 1.5mm;" t-esc="doc.partner_id.re_branch[4]"/>
+                                </t>
+                            </div>
+                            <div style="position: absolute;top:23mm;left:-155mm;">
+                                <span t-if="doc.money_type == '01'">✔</span>
+                            </div>
+                            <div style="position: absolute;top:32mm;left:-155mm;">
+                                <span t-if="doc.money_type == '02'">✔</span>
+                            </div>
+                            <div style="position: absolute;top:23mm;left:-38mm;">
+                                <span t-if="doc.money_type == '03'">✔</span>
+                            </div>
+                            <div style="position: absolute;top:32mm;left:-38mm;">
+                                <span t-if="doc.money_type == '04'">✔</span>
+                            </div>
+                            <div style="position: absolute;top:41mm;left:-38mm;">
+                                <span t-if="doc.money_type == '05'">✔</span>
+                            </div>
+                            <div style="position: absolute;float: right;top:43mm;right:20mm;">
+                                <span t-field="doc.sheet"/>
+                            </div>
+                            <div style="position: absolute;float: right;top:43mm;right:-12mm;">
+                                <span t-field="doc.sheet_quantity"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: absolute;top:50mm;">
+                        <div class="col-12">
+                            <div style="position: absolute;top:42mm;left:40mm;">
+                                <span t-field="doc.no_1"/>
+                            </div>
+                            <div t-if="doc.tax_01.vat" style="position: absolute;top:37mm;left:55mm;width:160mm;">
+                                <span style="margin-left: 1mm;"><t t-esc="doc.tax_01.vat[0]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_01.vat[:1]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.tax_01.vat[1:2]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_01.vat[2:3]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_01.vat[3:4]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_01.vat[4:5]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_01.vat[5:6]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_01.vat[6:7]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_01.vat[7:8]"/></span>
+                                <span style="margin-left: 4mm;"><t t-esc="doc.tax_01.vat[8:9]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_01.vat[9:10]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_01.vat[10:11]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_01.vat[11:12]"/></span>
+                            </div>
+                            <div style="position: absolute;top:38mm;left:156mm;width:160mm;">
+                                <span t-field="doc.tax_01.local_name"/>
+                            </div>
+                            <div style="position: absolute;top:47mm;left:160mm;width:160mm;font-size:13px;">
+                                <span t-field="doc.tax_01.local_street"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-342.5mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_income)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-393mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_tax)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-402mm;font-size:18px;">
+                                <span t-field="doc.condition"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: absolute;top:70mm;">
+                        <div class="col-12">
+                            <div style="position: absolute;top:42mm;left:40mm;">
+                                <span t-field="doc.no_2"/>
+                            </div>
+                            <div t-if="doc.tax_02.vat" style="position: absolute;top:37mm;left:55mm;width:160mm;">
+                                <span style="margin-left: 1mm;"><t t-esc="doc.tax_02.vat[0]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_02.vat[:1]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.tax_02.vat[1:2]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_02.vat[2:3]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_02.vat[3:4]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_02.vat[4:5]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_02.vat[5:6]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_02.vat[6:7]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_02.vat[7:8]"/></span>
+                                <span style="margin-left: 4mm;"><t t-esc="doc.tax_02.vat[8:9]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_02.vat[9:10]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_02.vat[10:11]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_02.vat[11:12]"/></span>
+                            </div>
+                            <div style="position: absolute;top:38mm;left:156mm;width:160mm;">
+                                <span t-field="doc.tax_02.local_name"/>
+                            </div>
+                            <div style="position: absolute;top:47mm;left:160mm;width:160mm;font-size:13px;">
+                                <span t-field="doc.tax_02.local_street"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-342.5mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_income_02)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-393mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_tax_02)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-402mm;font-size:18px;">
+                                <span t-field="doc.condition_02"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: absolute;top:90mm;">
+                        <div class="col-12">
+                            <div style="position: absolute;top:42mm;left:40mm;">
+                                <span t-field="doc.no_3"/>
+                            </div>
+                            <div t-if="doc.tax_03.vat" style="position: absolute;top:37mm;left:55mm;width:160mm;">
+                                <span style="margin-left: 1mm;"><t t-esc="doc.tax_03.vat[0]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_03.vat[:1]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.tax_03.vat[1:2]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_03.vat[2:3]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_03.vat[3:4]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_03.vat[4:5]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_03.vat[5:6]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_03.vat[6:7]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_03.vat[7:8]"/></span>
+                                <span style="margin-left: 4mm;"><t t-esc="doc.tax_03.vat[8:9]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_03.vat[9:10]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_03.vat[10:11]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_03.vat[11:12]"/></span>
+                            </div>
+                            <div style="position: absolute;top:38mm;left:156mm;width:160mm;">
+                                <span t-field="doc.tax_03.local_name"/>
+                            </div>
+                            <div style="position: absolute;top:47mm;left:160mm;width:160mm;font-size:13px;">
+                                <span t-field="doc.tax_03.local_street"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-342.5mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_income_03)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-393mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_tax_03)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-402mm;font-size:18px;">
+                                <span t-field="doc.condition_03"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: absolute;top:109mm;">
+                        <div class="col-12">
+                            <div style="position: absolute;top:42mm;left:40mm;">
+                                <span t-field="doc.no_4"/>
+                            </div>
+                            <div t-if="doc.tax_04.vat" style="position: absolute;top:37mm;left:55mm;width:160mm;">
+                                <span style="margin-left: 1mm;"><t t-esc="doc.tax_04.vat[0]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_04.vat[:1]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.tax_04.vat[1:2]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_04.vat[2:3]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_04.vat[3:4]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_04.vat[4:5]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_04.vat[5:6]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_04.vat[6:7]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_04.vat[7:8]"/></span>
+                                <span style="margin-left: 4mm;"><t t-esc="doc.tax_04.vat[8:9]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_04.vat[9:10]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_04.vat[10:11]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_04.vat[11:12]"/></span>
+                            </div>
+                            <div style="position: absolute;top:38mm;left:156mm;width:160mm;">
+                                <span t-field="doc.tax_04.local_name"/>
+                            </div>
+                            <div style="position: absolute;top:47mm;left:160mm;width:160mm;font-size:13px;">
+                                <span t-field="doc.tax_04.local_street"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-342.5mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_income_04)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-393mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_tax_04)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-402mm;font-size:18px;">
+                                <span t-field="doc.condition_04"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: absolute;top:129mm;">
+                        <div class="col-12">
+                            <div style="position: absolute;top:42mm;left:40mm;">
+                                <span t-field="doc.no_5"/>
+                            </div>
+                            <div t-if="doc.tax_05.vat" style="position: absolute;top:37mm;left:55mm;width:160mm;">
+                                <span style="margin-left: 1mm;"><t t-esc="doc.tax_05.vat[0]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_05.vat[:1]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.tax_05.vat[1:2]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_05.vat[2:3]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_05.vat[3:4]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_05.vat[4:5]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_05.vat[5:6]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_05.vat[6:7]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_05.vat[7:8]"/></span>
+                                <span style="margin-left: 4mm;"><t t-esc="doc.tax_05.vat[8:9]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_05.vat[9:10]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_05.vat[10:11]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_05.vat[11:12]"/></span>
+                            </div>
+                            <div style="position: absolute;top:38mm;left:156mm;width:160mm;">
+                                <span t-field="doc.tax_05.local_name"/>
+                            </div>
+                            <div style="position: absolute;top:47mm;left:160mm;width:160mm;font-size:13px;">
+                                <span t-field="doc.tax_05.local_street"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-342.5mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_income_05)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-393mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_tax_05)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-402mm;font-size:18px;">
+                                <span t-field="doc.condition_05"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: absolute;top:148mm;">
+                        <div class="col-12">
+                            <div style="position: absolute;top:42mm;left:40mm;">
+                                <span t-field="doc.no_6"/>
+                            </div>
+                            <div t-if="doc.tax_06.vat" style="position: absolute;top:37mm;left:55mm;width:160mm;">
+                                <span style="margin-left: 1mm;"><t t-esc="doc.tax_06.vat[0]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_06.vat[:1]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.tax_06.vat[1:2]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_06.vat[2:3]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_06.vat[3:4]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_06.vat[4:5]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_06.vat[5:6]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_06.vat[6:7]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_06.vat[7:8]"/></span>
+                                <span style="margin-left: 4mm;"><t t-esc="doc.tax_06.vat[8:9]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_06.vat[9:10]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_06.vat[10:11]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_06.vat[11:12]"/></span>
+                            </div>
+                            <div style="position: absolute;top:38mm;left:156mm;width:160mm;">
+                                <span t-field="doc.tax_06.local_name"/>
+                            </div>
+                            <div style="position: absolute;top:47mm;left:160mm;width:160mm;font-size:13px;">
+                                <span t-field="doc.tax_06.local_street"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-342.5mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_income_06)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-393mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_tax_06)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-402mm;font-size:18px;">
+                                <span t-field="doc.condition_06"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: absolute;top:168mm;">
+                        <div class="col-12">
+                            <div style="position: absolute;top:42mm;left:40mm;">
+                                <span t-field="doc.no_7"/>
+                            </div>
+                            <div t-if="doc.tax_07.vat" style="position: absolute;top:37mm;left:55mm;width:160mm;">
+                                <span style="margin-left: 1mm;"><t t-esc="doc.tax_07.vat[0]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_07.vat[:1]"/></span>
+                                <span style="margin-left: 2.5mm;"><t t-esc="doc.tax_07.vat[1:2]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_07.vat[2:3]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_07.vat[3:4]"/></span>
+                                <span style="margin-left: 6mm;"><t t-esc="doc.tax_07.vat[4:5]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_07.vat[5:6]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_07.vat[6:7]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.tax_07.vat[7:8]"/></span>
+                                <span style="margin-left: 4mm;"><t t-esc="doc.tax_07.vat[8:9]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_07.vat[9:10]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.tax_07.vat[10:11]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.tax_07.vat[11:12]"/></span>
+                            </div>
+                            <div style="position: absolute;top:38mm;left:156mm;width:160mm;">
+                                <span t-field="doc.tax_07.local_name"/>
+                            </div>
+                            <div style="position: absolute;top:47mm;left:160mm;width:160mm;font-size:13px;">
+                                <span t-field="doc.tax_07.local_street"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-342.5mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_income_07)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-393mm;font-size:18px;">
+                                <span t-esc="'{0:,.2f}'.format(doc.amount_tax_07)"/>
+                            </div>
+                            <div style="position: absolute;top:45mm;float: right;right:-402mm;font-size:18px;">
+                                <span t-field="doc.condition_07"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: absolute;top:180mm;">
+                        <div class="col-12">
+                            <div t-if="doc.user_id.sign_signature" style="position: absolute;left:310mm;top:67mm;">
+                                <img t-att-src="'data:image/png;base64,' + doc.user_id.sign_signature.decode('utf-8')" style="width: 200px; height: 100px;"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </t>

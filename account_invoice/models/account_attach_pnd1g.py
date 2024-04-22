@@ -55,6 +55,8 @@ class AccountPND1(models.Model):
     amount_tax_07 = fields.Float(string='จำนวนเงินภาษีที่หักและนำส่งทั้งปี')
     condition_07 = fields.Char('เงื่อนไข')
 
+    total_money = fields.Float()
+    total_tax = fields.Float()
     submit_date = fields.Date(string='ยื่นวันที่')
     user_id = fields.Many2one('res.users', 'ลงชื่อผู้จ่ายเงิน')
 

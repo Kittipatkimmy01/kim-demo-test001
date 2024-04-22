@@ -13,9 +13,9 @@
                         <label string="No." for="name" />
                         <field name="name" />
                     </h1>
-                    <field name="partner_id" />
-                    <field name="user_id" string="ชื่อผู้ประกอบการ"/>
-                    <field name="submit_date" string="ยื่นวันที่"/>
+                    <field name="partner_id" placeholder="ชื่อผู้เสียภาษี"/>
+                    <field name="user_id" string="ชื่อผู้ประกอบการ" placeholder="ชื่อผู้ประกอบการ"/>
+                    <field name="submit_date" string="ยื่นวันที่" placeholder="ยื่นวันที่"/>
                     <group>
                         <group string="การจ่ายเงินได้ตามมาตรา 70 แห่งประมวลรัษฎากร">
                             <field name="payee_name" string="ชื่อผู้รับเงินได้."/>
@@ -29,7 +29,7 @@
                             <field name="tax_on_sale" string="(2) ภาษีจากการจำหน่ายเงินกำไรหรือที่ถือได้ว่าเป็นเงินกำไร ตามมาตรา 70 ทวิ แห่งประมวลรัษฎากร"/>
                             <field name="normal_confirm" string="ยื่นปกติ"/>
                             <field name="further_confirm" string="ยื่นเพิ่มเติมครั้งที่"/>
-                            <field name="further_time" string="" invisible="further_confirm == False"/>
+                            <field name="further_time" string="ครั้งที่" invisible="further_confirm == False"/>
                         </group>
                     </group>
                     <group string="1. ประเภทเงินได้ที่จ่าย">
@@ -44,11 +44,11 @@
                                 <span>(6) ดอกเบี้ยอื่นๆ ตามมาตรา 40 (4) (ก) <field name="other_interest" string=""/></span><br/>
                                 <span>(7) เงินปันผล ตามมาตรา 40 (4) (ข) <field name="dividend" string=""/></span><br/>
                                 <span>(8) เงินได้อื่นๆ ตามมาตรา 40(4) (ระบุ) <field name="other_income_bool" string=""/></span><br/>
-                                <span><field name="other_income" string="" invisible="other_income_bool == False"/></span><br/>
+                                <span><field name="other_income" string="" placeholder="อื่นๆ" invisible="other_income_bool == False"/></span><br/>
                                 <span>(9) ค่าเช่าเรือเดินทะเลฯ ตามกฎหมายว่าด้วยการส่งเสริมพาณิชย์นาวี <field name="boat_rental_fees" string=""/></span><br/>
                                 <span>(10) ค่าเช่าหรือเงินหรือประโยชน์อย่างอื่น ตามมาตรา 40 (5) <field name="other_rental_fees" string=""/></span><br/>
                                 <span>(11) เงินได้จากวิชาชีพอิสระ ตามมาตรา 40 (6) (ระบุ). <field name="income_independent_bool" string=""/></span><br/>
-                                <span><field name="income_independent" string="" invisible="income_independent_bool == False"/></span>
+                                <span><field name="income_independent" string="" placeholder="เงินได้จากวิชาชีพอิสระ ตามมาตรา 40 (6) (ระบุ)." invisible="income_independent_bool == False"/></span>
                             </div>
                         </div>
                     </group>

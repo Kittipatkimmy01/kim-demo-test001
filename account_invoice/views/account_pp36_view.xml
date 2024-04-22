@@ -13,13 +13,13 @@
                         <label string="No." for="name" />
                         <field name="name" />
                     </h1>
-                    <field name="partner_id"/>
+                    <field name="partner_id" placeholder="ชื่อผู้เสียภาษี"/>
                     <group>
                         <group>
                             <field name="user_id" string="ชื่อผู้ประกอบการ"/>
                             <field name="normal_confirm" string="ยื่นปกติ"/>
                             <field name="further_confirm" string="ยื่นเพิ่มเติมครั้งที่"/>
-                            <field name="further_time" string="" invisible="further_confirm == False"/>
+                            <field name="further_time" string="ครั้งที่" invisible="further_confirm == False"/>
                             <field name="submit_date" string="ยื่นวันที่"/>
                         </group>
                     </group>
@@ -61,7 +61,7 @@
                             </div>
                         <group>
                             <field name="abroad" string="3) อื่นๆ (ระบุ)"/>
-                            <field name="other_other" string="" invisible="abroad == False"/>
+                            <field name="other_other" string="" invisible="abroad == False" placeholder="อื่นๆ"/>
                             <field name="pay_payment" string="จ่ายเงินชำระสำหรับ"/>
                         </group>
                     </group>

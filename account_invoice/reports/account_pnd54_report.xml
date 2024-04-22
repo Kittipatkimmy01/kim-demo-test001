@@ -5,49 +5,49 @@
                 <div class="article o_report_pnd54_bg" style="font-size: 18px;">
                     <div class="row" style="position: absolute;top:42mm;width:160mm;">
                         <div class="col-7">
-                            <div t-if="doc.partner_id.vat" style="position: absolute;left:84mm;width:160mm;top:7mm;">
+                            <div t-if="doc.partner_id.vat" style="position: absolute;left:81mm;width:160mm;top:7mm;">
                                 <span style="margin-left: -2mm;"><t t-esc="doc.partner_id.vat[0]"/></span>
                                 <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[:1]"/></span>
                                 <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[1:2]"/></span>
-                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[2:3]"/></span>
+                                <span style="margin-left: 4mm;"><t t-esc="doc.partner_id.vat[2:3]"/></span>
                                 <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[3:4]"/></span>
                                 <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[4:5]"/></span>
                                 <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[5:6]"/></span>
                                 <span style="margin-left: 5.5mm;"><t t-esc="doc.partner_id.vat[6:7]"/></span>
                                 <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[7:8]"/></span>
-                                <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[8:9]"/></span>
-                                <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[9:10]"/></span>
-                                <span style="margin-left: 2.5mm;"><t t-esc="doc.partner_id.vat[10:11]"/></span>
-                                <span style="margin-left: 4.5mm;"><t t-esc="doc.partner_id.vat[11:12]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[8:9]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[9:10]"/></span>
+                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[10:11]"/></span>
+                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[11:12]"/></span>
                             </div>
-                            <div style="float: right;position: absolute;top:15mm;left:146mm;width:40mm;">
+                            <div style="float: right;position: absolute;top:16mm;left:142mm;width:40mm;">
                                 <t t-if="doc.partner_id.pnd_branch">
                                     <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[0]"/>
                                     <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[1]"/>
                                     <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[2]"/>
                                     <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[3]"/>
-                                    <span style="margin-right: -1mm;" t-esc="doc.partner_id.pnd_branch[4]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[4]"/>
                                 </t>
                             </div>
-                            <div style="position: absolute;top:23mm;width:160mm;left:25mm;">
+                            <div style="position: absolute;top:24mm;width:160mm;left:25mm;">
                                 <span t-esc="doc.partner_id.name"/>
                             </div>
-                            <div style="margin-top:35mm;left:64mm;position: absolute;">
+                            <div style="margin-top:36mm;left:62mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_building"/>
                             </div>
-                            <div style="position: absolute;margin-top:35mm;left:140mm;">
+                            <div style="position: absolute;margin-top:36mm;left:137mm;">
                                 <span t-field="doc.partner_id.local_thai_room"/>
                             </div>
-                            <div style="position: absolute;margin-top:35mm;left:167mm;">
+                            <div style="position: absolute;margin-top:36mm;left:161mm;">
                                 <span t-field="doc.partner_id.local_thai_floor"/>
                             </div>
-                            <div style="margin-top:43mm;left:42mm;position: absolute;">
+                            <div style="margin-top:43mm;left:38mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_village"/>
                             </div>
-                            <div style="margin-top:43mm;left:86mm;position: absolute;">
+                            <div style="margin-top:43mm;left:81mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_number"/>
                             </div>
-                            <div style="margin-top:43mm;left:112mm;position: absolute;">
+                            <div style="margin-top:43mm;left:108mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_moo"/>
                             </div>
                             <div style="margin-top:43mm;left:140mm;position: absolute;">
@@ -65,13 +65,13 @@
                             <div style="margin-top:58mm;left:120mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_state"/>
                             </div>
-                            <div style="top:66mm;left:48mm;position: absolute;">
+                            <div style="top:66mm;left:45mm;position: absolute;">
                                 <t t-if="doc.partner_id.local_zip">
                                     <span t-esc="doc.partner_id.local_zip[0]"/>
                                     <span style="margin-left:2mm;" t-esc="doc.partner_id.local_zip[1]"/>
                                     <span style="margin-left:2mm;" t-esc="doc.partner_id.local_zip[2]"/>
-                                    <span style="margin-left:2mm;" t-esc="doc.partner_id.local_zip[3]"/>
-                                    <span style="margin-left:2mm;" t-esc="doc.partner_id.local_zip[4]"/>
+                                    <span style="margin-left:1mm;" t-esc="doc.partner_id.local_zip[3]"/>
+                                    <span style="margin-left:1mm;" t-esc="doc.partner_id.local_zip[4]"/>
                                 </t>
                             </div>
                             <div style="position:absolute;top:66mm;left:68mm;">
@@ -79,11 +79,11 @@
                             </div>
                         </div>
                         <div class="col-5">
-                            <div style="position: absolute;top:9mm;left:180mm;">
+                            <div style="position: absolute;top:10mm;left:176mm;">
                                 <span t-if="doc.tax_deducted">✔</span>
                             </div>
-                            <div style="position: absolute;top:21mm;left:179mm;">
-                                <span style="margin-left:1mm;" t-if="doc.tax_on_sale">✔</span>
+                            <div style="position: absolute;top:21mm;left:176mm;">
+                                <span t-if="doc.tax_on_sale">✔</span>
                             </div>
                             <div style="position: absolute;top:47mm;">
                                 <div style="position: absolute;left:83mm;">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row" style="font-size: 24px;position:relative;top:145mm;">
+                    <div class="row" style="font-size: 24px;position:relative;top:146mm;">
                         <div class="col-4">
                             <div style="top:8mm;position:absolute;">
                                 <span style="margin-left:26mm;" t-if="doc.fee">✔</span>
@@ -134,28 +134,28 @@
                         </div>
                         <div class="col-4">
                             <div style="top:8mm;position:absolute;">
-                                <span style="margin-left:24mm;" t-if="doc.interest">✔</span>
+                                <span style="margin-left:26mm;" t-if="doc.interest">✔</span>
                             </div>
                             <div style="top:22mm;position:absolute;">
-                                <span style="margin-left:24mm;" t-if="doc.other_interest">✔</span>
+                                <span style="margin-left:26mm;" t-if="doc.other_interest">✔</span>
                             </div>
                             <div style="top:29mm;position:absolute;">
-                                <span style="margin-left:24mm;" t-if="doc.dividend">✔</span>
+                                <span style="margin-left:26mm;" t-if="doc.dividend">✔</span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div style="top:8mm;position:absolute;">
-                                <span style="margin-left:2mm;" t-if="doc.other_income_bool">✔</span>
+                                <span style="margin-left:6mm;" t-if="doc.other_income_bool">✔</span>
                                 <span style="margin-left:56mm;font-size: 14px;" t-esc="doc.other_income"/>
                             </div>
                             <div style="top:15mm;position:absolute;">
-                                <span style="margin-left:2mm;" t-if="doc.boat_rental_fees">✔</span>
+                                <span style="margin-left:6mm;" t-if="doc.boat_rental_fees">✔</span>
                             </div>
                             <div style="top:22mm;position:absolute;">
-                                <span style="margin-left:2mm;" t-if="doc.other_rental_fees">✔</span>
+                                <span style="margin-left:6mm;" t-if="doc.other_rental_fees">✔</span>
                             </div>
                             <div style="top:29mm;position:absolute;">
-                                <span style="margin-left:2mm;" t-if="doc.income_independent_bool">✔</span>
+                                <span style="margin-left:6mm;" t-if="doc.income_independent_bool">✔</span>
                                 <span style="margin-left:70mm;font-size: 14px;" t-esc="doc.income_independent"/>
                             </div>
                         </div>
@@ -163,53 +163,53 @@
                     <div class="row" style="position:relative;top:170mm;">
                         <div class="col-12">
                             <div style="position:absolute;top:23mm;text-align: right;right:18mm;font-size: 18px;">
-                                <span style="margin-right:6mm;" t-esc="'{0:,.2f}'.format(doc.income).split('.')[0]"/>
-                                <span style="margin-right:1mm;" t-esc="'{0:,.2f}'.format(doc.income).split('.')[1]"/>
+                                <span style="margin-right:3m;" t-esc="'{0:,.2f}'.format(doc.income).split('.')[0]"/>
+                                <span style="margin-right:-2mm;" t-esc="'{0:,.2f}'.format(doc.income).split('.')[1]"/>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="position:relative;top:180mm;">
                         <div class="col-8">
-                            <div style="position:absolute;top:22mm;font-size: 16px;left:93mm;">
+                            <div style="position:absolute;top:22mm;font-size: 16px;left:89mm;">
                                 <span t-esc="doc.percentage"/>
                             </div>
                         </div>
                         <div class="col-4">
                             <div style="position:absolute;top:22mm;text-align: right;right:18mm;font-size: 18px;">
-                                <span style="margin-right:6mm;" t-esc="'{0:,.2f}'.format(doc.tax_money).split('.')[0]"/>
-                                <span style="margin-right:1mm;" t-esc="'{0:,.2f}'.format(doc.tax_money).split('.')[1]"/>
+                                <span style="margin-right:3mm;" t-esc="'{0:,.2f}'.format(doc.tax_money).split('.')[0]"/>
+                                <span style="margin-right:-2mm;" t-esc="'{0:,.2f}'.format(doc.tax_money).split('.')[1]"/>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="position:relative;top:190mm;">
                         <div class="col-12">
                             <div style="position:absolute;top:21mm;text-align: right;right:18mm;font-size: 18px;">
-                                <span style="margin-right:6mm;" t-esc="'{0:,.2f}'.format(doc.extra_money).split('.')[0]"/>
-                                <span style="margin-right:1mm;" t-esc="'{0:,.2f}'.format(doc.extra_money).split('.')[1]"/>
+                                <span style="margin-right:3mm;" t-esc="'{0:,.2f}'.format(doc.extra_money).split('.')[0]"/>
+                                <span style="margin-right:-2mm;" t-esc="'{0:,.2f}'.format(doc.extra_money).split('.')[1]"/>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="position:relative;top:210mm;">
                         <div class="col-12">
                             <div style="position:absolute;top:10mm;text-align: right;right:18mm;font-size: 18px;">
-                                <span style="margin-right:6mm;" t-esc="'{0:,.2f}'.format(doc.total).split('.')[0]"/>
-                                <span style="margin-right:1mm;" t-esc="'{0:,.2f}'.format(doc.total).split('.')[1]"/>
+                                <span style="margin-right:3mm;" t-esc="'{0:,.2f}'.format(doc.total).split('.')[0]"/>
+                                <span style="margin-right:-2mm;" t-esc="'{0:,.2f}'.format(doc.total).split('.')[1]"/>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="position:relative;font-size: 24px;top:228mm;">
                         <div class="col-12">
-                            <div style="position:absolute;left:58mm;">
+                            <div style="position:absolute;left:56mm;">
                                 <span t-if="doc.deducted">✔</span>
                             </div>
-                            <div style="position:absolute;left:87mm;">
+                            <div style="position:absolute;left:84mm;">
                                 <span t-if="doc.issue_taxes">✔</span>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="position:relative;top:230mm;font-size: 18px;">
                         <div class="col-12">
-                            <div style="position:absolute;top:8mm;left:165mm;">
+                            <div style="position:absolute;top:8mm;left:161mm;">
                                 <span t-esc="doc.tax_date.strftime('%d')[0]"/>
                                 <span style="margin-left:3mm;" t-esc="doc.tax_date.strftime('%d')[1]"/>
                                 <span style="margin-left:15mm;" t-esc="doc.tax_date.strftime('%m')[0]"/>
@@ -246,38 +246,38 @@
                     <div class="row" style="position:relative;top:274mm;">
                         <div class="col-12">
                             <div style="position:absolute;top:17mm;text-align: right;right:16mm;font-size: 18px;">
-                                <span style="margin-right:7mm;" t-esc="'{0:,.2f}'.format(doc.profit).split('.')[0]"/>
-                                <span style="margin-right:3mm;" t-esc="'{0:,.2f}'.format(doc.profit).split('.')[1]"/>
+                                <span style="margin-right:3.5mm;" t-esc="'{0:,.2f}'.format(doc.profit).split('.')[0]"/>
+                                <span style="margin-right:0mm;" t-esc="'{0:,.2f}'.format(doc.profit).split('.')[1]"/>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="position:relative;top:284mm;">
                         <div class="col-12">
                             <div style="position:absolute;top:16mm;text-align: right;right:16mm;font-size: 18px;">
-                                <span style="margin-right:7mm;" t-esc="'{0:,.2f}'.format(doc.remittance_tax).split('.')[0]"/>
-                                <span style="margin-right:3mm;" t-esc="'{0:,.2f}'.format(doc.remittance_tax).split('.')[1]"/>
+                                <span style="margin-right:3.5mm;" t-esc="'{0:,.2f}'.format(doc.remittance_tax).split('.')[0]"/>
+                                <span style="margin-right:0mm;" t-esc="'{0:,.2f}'.format(doc.remittance_tax).split('.')[1]"/>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="position:relative;top:288mm;">
                         <div class="col-12">
                             <div style="position:absolute;top:21mm;text-align: right;right:16mm;font-size: 18px;">
-                                <span style="margin-right:7mm;" t-esc="'{0:,.2f}'.format(doc.extra_moneys).split('.')[0]"/>
-                                <span style="margin-right:3mm;" t-esc="'{0:,.2f}'.format(doc.extra_moneys).split('.')[1]"/>
+                                <span style="margin-right:3.5mm;" t-esc="'{0:,.2f}'.format(doc.extra_moneys).split('.')[0]"/>
+                                <span style="margin-right:0mm;" t-esc="'{0:,.2f}'.format(doc.extra_moneys).split('.')[1]"/>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="position:relative;top:294mm;">
                         <div class="col-12">
                             <div style="position:absolute;top:24mm;text-align: right;right:16mm;font-size: 18px;">
-                                <span style="margin-right:7mm;" t-esc="'{0:,.2f}'.format(doc.total_money).split('.')[0]"/>
-                                <span style="margin-right:3mm;" t-esc="'{0:,.2f}'.format(doc.total_money).split('.')[1]"/>
+                                <span style="margin-right:3.5mm;" t-esc="'{0:,.2f}'.format(doc.total_money).split('.')[0]"/>
+                                <span style="margin-right:0mm;" t-esc="'{0:,.2f}'.format(doc.total_money).split('.')[1]"/>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="position:relative;top:304mm;font-size: 18px;">
                         <div class="col-12">
-                            <div style="position:absolute;top:23mm;left:172mm;">
+                            <div style="position:absolute;top:23mm;left:168mm;">
                                 <span t-esc="doc.date_70_tw.strftime('%d')[0]"/>
                                 <span style="margin-left:2mm;" t-esc="doc.date_70_tw.strftime('%d')[1]"/>
                                 <span style="margin-left:15mm;" t-esc="doc.date_70_tw.strftime('%m')[0]"/>
@@ -291,6 +291,20 @@
                                <span t-esc="doc.tw_number"/>
                             </div>
                         </div>
+                    </div>
+                    <div t-if="doc.submit_date" style="position: absolute;left:129mm;top:397mm;">
+                        <span t-esc="doc.submit_date.strftime('%d')[0]"/>
+                        <span style="margin-left:2mm;" t-esc="doc.submit_date.strftime('%d')[1]"/>
+                    </div>
+                    <div t-if="doc.submit_date" style="position: absolute;left:154mm;top:397mm;">
+                        <span t-esc="doc.submit_date.strftime('%m')[0]"/>
+                        <span style="margin-left:2mm;" t-esc="doc.submit_date.strftime('%m')[1]"/>
+                    </div>
+                    <div t-if="doc.submit_date" style="position: absolute;left:178mm;top:397mm;">
+                        <span t-esc="doc.submit_date.strftime('%Y')[0]"/>
+                        <span style="margin-left:2mm;" t-esc="doc.submit_date.strftime('%Y')[1]"/>
+                        <span style="margin-left:2mm;" t-esc="doc.submit_date.strftime('%Y')[2]"/>
+                        <span style="margin-left:2mm;" t-esc="doc.submit_date.strftime('%Y')[3]"/>
                     </div>
                 </div>
             </t>

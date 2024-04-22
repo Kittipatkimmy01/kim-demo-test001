@@ -13,9 +13,9 @@
                         <label string="No." for="name" />
                         <field name="name" />
                     </h1>
-                    <field name="partner_id"/>
-                    <field name="user_id" string="ชื่อผู้ประกอบการ"/>
-                    <field name="submit_date" string="ยื่นวันที่"/>
+                    <field name="partner_id" placeholder="ชื่อผู้เสียภาษี"/>
+                    <field name="user_id" placeholder="ชื่อผู้ประกอบการ"/>
+                    <field name="submit_date" placeholder="ยื่นวันที่"/>
                     <group>
                         <group string="กรณีมีสาขา ยื่นแบบแสดงรายการโดย :">
                             <field name="document_item" string="(1) แยกยื่นเป็นรายสถานประกอบการ เป็นแบบฯ ของ"/>
@@ -25,12 +25,12 @@
                             <field name="documents_together" string="(2) ยื่นรวมกันที่ (ตามที่ได้ยื่นคำขอฯและได้รับอนุมัติแล้ว)"/>
                             <field name="head_company_to" string="(2.1) สำนักงานใหญ่"/>
                             <field name="branch_to" string="(2.2) สาขาที่"/>
-                            <field name="branch_code_to" invisible="branch_to == False" string=""/>
+                            <field name="branch_code_to" invisible="branch_to == False" string="" placeholder="สาขา"/>
                         </group>
                         <group>
                             <field name="normal_confirm" string="ยื่นปกติ"/>
                             <field name="further_confirm" string="ยื่นเพิ่มเติมครั้งที่"/>
-                            <field name="further_time" string="" invisible="further_confirm == False"/>
+                            <field name="further_time" string="ครั้งที่" invisible="further_confirm == False"/>
                             <field name="dead_line" string="ภายในกำหนดเวลา"/>
                             <field name="over_due" string="เกินกำหนดเวลา"/>
                             <field name="year" string="พ.ศ."/>

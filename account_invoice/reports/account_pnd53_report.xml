@@ -10,9 +10,9 @@
                                 <span style="margin-left: 4mm;"><t t-esc="doc.partner_id.vat[0]"/></span>
                                 <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[:1]"/></span>
                                 <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[1:2]"/></span>
-                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[2:3]"/></span>
-                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[3:4]"/></span>
-                                <span style="margin-left: 4mm;"><t t-esc="doc.partner_id.vat[4:5]"/></span>
+                                <span style="margin-left: 1mm;"><t t-esc="doc.partner_id.vat[2:3]"/></span>
+                                <span style="margin-left: 1.5mm;"><t t-esc="doc.partner_id.vat[3:4]"/></span>
+                                <span style="margin-left: 4.5mm;"><t t-esc="doc.partner_id.vat[4:5]"/></span>
                                 <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[5:6]"/></span>
                                 <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[6:7]"/></span>
                                 <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[7:8]"/></span>
@@ -21,43 +21,46 @@
                                 <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[10:11]"/></span>
                                 <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[11:12]"/></span>
                             </div>
-                            <div style="position: absolute;float: right;top:16mm;left:63.5mm;">
-                                <t t-if="doc.partner_id.pnd_branch">
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[0]"/>
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[1]"/>
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[2]"/>
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[3]"/>
-                                    <span style="margin-right: 1mm;" t-esc="doc.partner_id.pnd_branch[4]"/>
+                            <div style="position: absolute;float: right;top:16.5mm;left:60.5mm;">
+                                <t t-if="doc.partner_id.re_branch">
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[0]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[1]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[2]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[3]"/>
+                                    <span style="margin-right: 3mm;" t-esc="doc.partner_id.re_branch[4]"/>
                                 </t>
                             </div>
-                            <div style="position: absolute;top:23mm;left:-50mm;">
+                            <div style="position: absolute;top:24mm;left:-50mm;">
                                 <span t-field="doc.partner_id.name"/>
                             </div>
-                            <div style="top:32mm;left:-28mm;position: absolute;">
+                            <div style="top:32mm;left:-27mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_building"/>
                             </div>
-                            <div style="position: absolute;top:32mm;left:19mm;">
+                            <div style="position: absolute;top:32mm;left:17mm;">
                                 <span t-field="doc.partner_id.local_thai_room"/>
                             </div>
-                            <div style="position: absolute;top:32mm;left:38mm;">
+                            <div style="position: absolute;top:32mm;left:34mm;">
                                 <span t-field="doc.partner_id.local_thai_floor"/>
                             </div>
-                            <div style="top:32mm;left:63mm;position: absolute;">
+                            <div style="top:32mm;left:60mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_village"/>
                             </div>
-                            <div style="top:40mm;left:-36mm;position: absolute;">
+                            <div style="top:40mm;left:-38mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_number"/>
                             </div>
-                            <div style="top:40mm;left:4mm;position: absolute;">
+                            <div style="top:40mm;left:1mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_moo"/>
                             </div>
                             <div style="top:40mm;left:34mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_alley"/>
                             </div>
-                            <div style="top:47mm;left:-40mm;position: absolute;">
+                            <div style="top:40mm;left:70mm;position: absolute;">
+                                <span t-field="doc.partner_id.local_thai_junction"/>
+                            </div>
+                            <div style="top:48mm;left:-40mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_road"/>
                             </div>
-                            <div style="top:47mm;left:36mm;position: absolute;">
+                            <div style="top:48mm;left:36mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_street2"/>
                             </div>
                             <div style="top:55mm;left:-30mm;position: absolute;">
@@ -66,7 +69,7 @@
                             <div style="top:55mm;left:34mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_state"/>
                             </div>
-                            <div style="top:63mm;left:-27mm;position: absolute;">
+                            <div style="top:63mm;left:-30mm;position: absolute;">
                                 <t t-if="doc.partner_id.local_zip">
                                     <span t-esc="doc.partner_id.local_zip[0]"/>
                                     <span style="margin-left:2mm;" t-esc="doc.partner_id.local_zip[1]"/>
@@ -77,13 +80,13 @@
                             </div>
                         </div>
                         <div class="col-5">
-                            <div style="position: absolute;top:13mm;left:111mm">
+                            <div style="position: absolute;top:13mm;left:108mm">
                                 <span t-if="doc.remit_tax == 'r1'">✔</span>
                             </div>
-                            <div style="position: absolute;top:22mm;left:111mm">
+                            <div style="position: absolute;top:22mm;left:108mm">
                                 <span t-if="doc.remit_tax == 'r2'">✔</span>
                             </div>
-                            <div style="position: absolute;top:32mm;left:111mm">
+                            <div style="position: absolute;top:32mm;left:108mm">
                                 <span t-if="doc.remit_tax == 'r3'">✔</span>
                             </div>
                             <div style="position: absolute;top:52mm;">
@@ -101,22 +104,22 @@
                     </div>
                     <div class="row" style="position: relative;top:100mm;">
                         <div class="col-7">
-                            <div style="position: absolute;top:27mm;left:158mm;font-size:16px;">
+                            <div style="position: absolute;top:27mm;left:155mm;font-size:16px;">
                                 <span t-esc="doc.year"/>
                             </div>
-                            <div style="position: absolute;top:35mm;left:30mm">
+                            <div style="position: absolute;top:35mm;left:27mm">
                                 <span style="margin-left:-4mm;" t-if="doc.month_selected == '01'">✔</span>
                                 <span style="margin-left:34mm;" t-if="doc.month_selected == '04'">✔</span>
                                 <span style="margin-left:72mm;" t-if="doc.month_selected == '07'">✔</span>
                                 <span style="margin-left:109mm;" t-if="doc.month_selected == '10'">✔</span>
                             </div>
-                            <div style="position: absolute;top:42mm;left:30mm">
+                            <div style="position: absolute;top:42mm;left:27mm">
                                 <span style="margin-left:-4mm;" t-if="doc.month_selected == '02'">✔</span>
                                 <span style="margin-left:34mm;" t-if="doc.month_selected == '05'">✔</span>
                                 <span style="margin-left:72mm;" t-if="doc.month_selected == '08'">✔</span>
                                 <span style="margin-left:109mm;" t-if="doc.month_selected == '11'">✔</span>
                             </div>
-                            <div style="position: absolute;top:49mm;left:30mm">
+                            <div style="position: absolute;top:49mm;left:27mm">
                                 <span style="margin-left:-4mm;" t-if="doc.month_selected == '03'">✔</span>
                                 <span style="margin-left:34mm;" t-if="doc.month_selected == '06'">✔</span>
                                 <span style="margin-left:72mm;" t-if="doc.month_selected == '09'">✔</span>
@@ -127,24 +130,24 @@
                     </div>
                     <div class="row" style="position: relative;top:120mm;">
                         <div class="col-7" style="font-size: 24px;">
-                            <div style="position: absolute;top:41mm;left:140mm;">
+                            <div style="position: absolute;top:41mm;left:136mm;">
                                 <span t-if="doc.attachment">✔</span>
                             </div>
-                            <div style="position: absolute;top:68mm;left:140mm;">
+                            <div style="position: absolute;top:68mm;left:136mm;">
                                 <span t-if="doc.recording">✔</span>
                             </div>
                         </div>
                         <div class="col-5" style="font-size: 16px;">
-                            <div style="position: absolute;top:43mm;left:260mm;">
+                            <div style="position: absolute;top:43mm;left:257mm;">
                                 <span style="margin-" t-esc="doc.attachment_qty"/>
                             </div>
-                            <div style="position: absolute;top:50mm;left:260mm;">
+                            <div style="position: absolute;top:50mm;left:257mm;">
                                 <span style="margin-" t-esc="doc.attachment_qty_qty"/>
                             </div>
-                            <div style="position: absolute;top:70mm;left:260mm;">
+                            <div style="position: absolute;top:70mm;left:257mm;">
                                 <span t-esc="doc.recording_qty"/>
                             </div>
-                            <div style="position: absolute;top:77mm;left:260mm;">
+                            <div style="position: absolute;top:77mm;left:257mm;">
                                 <span t-esc="doc.recording_qty_qty"/>
                             </div>
                             <div style="position: absolute;top:83mm;left:230mm;">
@@ -158,17 +161,43 @@
                     <div class="row" style="position: relative;top:150mm;">
                         <div class="col-7"/>
                         <div class="col-5" style="font-size: 18px;">
-                            <div style="position: absolute;top:90mm;right:54mm;">
+                            <div style="position: absolute;top:90mm;right:51mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.total_money)"/>
                             </div>
-                            <div style="position: absolute;top:100mm;right:54mm;">
+                            <div style="position: absolute;top:100mm;right:51mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.total_tax)"/>
                             </div>
-                            <div style="position: absolute;top:110mm;right:54mm;">
+                            <div style="position: absolute;top:110mm;right:51mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.extra_money)"/>
                             </div>
-                            <div style="position: absolute;top:120mm;right:54mm;">
+                            <div style="position: absolute;top:120mm;right:51mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.total)"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:250mm;font-size: 18px;">
+                        <div class="col-12">
+                            <div t-if="doc.user_id.sign_signature" style="position:absolute;top:58mm;left:126mm;">
+                                <img t-att-src="'data:image/png;base64,' + doc.user_id.sign_signature.decode('utf-8')" style="width: 200px; height: 100px;"/>
+                            </div>
+                            <t t-set="month_name">
+                                <t t-if="doc.submit_date.strftime('%m') == '01'">มกราคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '02'">กุมภาพันธ์</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '03'">มีนาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '04'">เมษายน</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '05'">พฤษภาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '06'">มิถุนายน</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '07'">กรกฎาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '08'">สิงหาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '09'">กันยายน</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '10'">ตุลาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '11'">พฤศจิกายน</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '12'">ธันวาคม</t>
+                            </t>
+                            <div t-if="doc.submit_date" style="position: absolute;top:85mm;left:125mm;">
+                                <span t-esc="doc.submit_date.strftime('%#d')"/>
+                                <span style="margin-left:15mm;" t-esc="month_name"/>
+                                <span style="margin-left:18mm;" t-esc="int(doc.submit_date.strftime('%Y')) + 543"/>
                             </div>
                         </div>
                     </div>

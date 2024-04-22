@@ -2,31 +2,31 @@
     <template id="account_pnd1g_report_document">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <div class="article o_report_pnd1g_bg">
-                    <div class="row" style="font-size: 18px;position: absolute;left:86mm;top:55mm;width:160mm;">
+                 <div class="article o_report_pnd1g_bg">
+                    <div class="row" style="font-size: 18px;position: absolute;left:86mm;top:56mm;width:160mm;">
                         <div class="col-7">
                             <div t-if="doc.partner_id.vat">
-                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[0]"/></span>
-                                <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[:1]"/></span>
+                                <span style="margin-left: 3mm;"><t t-esc="doc.partner_id.vat[0]"/></span>
+                                <span style="margin-left: 4mm;"><t t-esc="doc.partner_id.vat[:1]"/></span>
                                 <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[1:2]"/></span>
-                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[2:3]"/></span>
+                                <span style="margin-left: 1mm;"><t t-esc="doc.partner_id.vat[2:3]"/></span>
                                 <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[3:4]"/></span>
                                 <span style="margin-left: 4mm;"><t t-esc="doc.partner_id.vat[4:5]"/></span>
                                 <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[5:6]"/></span>
-                                <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[6:7]"/></span>
+                                <span style="margin-left: 1.5mm;"><t t-esc="doc.partner_id.vat[6:7]"/></span>
                                 <span style="margin-left: 1mm;"><t t-esc="doc.partner_id.vat[7:8]"/></span>
                                 <span style="margin-left: 2mm;"><t t-esc="doc.partner_id.vat[8:9]"/></span>
                                 <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[9:10]"/></span>
                                 <span style="margin-left: 1mm;"><t t-esc="doc.partner_id.vat[10:11]"/></span>
                                 <span style="margin-left: 5mm;"><t t-esc="doc.partner_id.vat[11:12]"/></span>
                             </div>
-                            <div style="position: absolute;float: right;top:15mm;left:62mm;">
-                                <t t-if="doc.partner_id.pnd_branch">
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[0]"/>
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[1]"/>
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[2]"/>
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[3]"/>
-                                    <span style="margin-right: 1mm;" t-esc="doc.partner_id.pnd_branch[4]"/>
+                            <div style="position: absolute;float: right;top:15mm;left:58mm;">
+                                <t t-if="doc.partner_id.re_branch">
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[0]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[1]"/>
+                                    <span style="margin-right: 1mm;" t-esc="doc.partner_id.re_branch[2]"/>
+                                    <span style="margin-right: 2.5mm;" t-esc="doc.partner_id.re_branch[3]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[4]"/>
                                 </t>
                             </div>
                             <div style="position: absolute;top:23mm;left:-50mm;">
@@ -35,23 +35,26 @@
                             <div style="top:31mm;left:-26mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_building"/>
                             </div>
-                            <div style="position: absolute;top:31mm;left:20mm;">
+                            <div style="position: absolute;top:31mm;left:16mm;">
                                 <span t-field="doc.partner_id.local_thai_room"/>
                             </div>
-                            <div style="position: absolute;top:31mm;left:38mm;">
+                            <div style="position: absolute;top:31mm;left:34mm;">
                                 <span t-field="doc.partner_id.local_thai_floor"/>
                             </div>
-                            <div style="top:31mm;left:63mm;position: absolute;">
+                            <div style="top:31mm;left:57mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_village"/>
                             </div>
-                            <div style="top:39mm;left:-36mm;position: absolute;">
+                            <div style="top:39mm;left:-40mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_number"/>
                             </div>
-                            <div style="top:39mm;left:4mm;position: absolute;">
+                            <div style="top:39mm;left:0mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_moo"/>
                             </div>
                             <div style="top:39mm;left:34mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_alley"/>
+                            </div>
+                            <div style="top:39mm;left:70mm;position: absolute;">
+                                <span t-field="doc.partner_id.local_thai_junction"/>
                             </div>
                             <div style="top:46mm;left:-40mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_thai_road"/>
@@ -65,7 +68,7 @@
                             <div style="top:54mm;left:34mm;position: absolute;">
                                 <span t-field="doc.partner_id.local_state"/>
                             </div>
-                            <div style="top:61mm;left:-25mm;position: absolute;">
+                            <div style="top:61mm;left:-29mm;position: absolute;">
                                 <t t-if="doc.partner_id.local_zip">
                                     <span t-esc="doc.partner_id.local_zip[0]"/>
                                     <span style="margin-left:2mm;" t-esc="doc.partner_id.local_zip[1]"/>
@@ -76,34 +79,34 @@
                             </div>
                         </div>
                         <div class="col-5">
-                            <div style="top:11mm;position: absolute;left:178mm;">
+                            <div style="top:11mm;position: absolute;left:175mm;">
                                 <span t-esc="doc.vat_year"/>
                             </div>
-                            <div style="top:43mm;position: absolute;left:98mm;">
+                            <div style="top:43mm;position: absolute;left:94mm;">
                                 <span t-if="doc.normal_confirm">✔</span>
                             </div>
-                            <div style="position: absolute;left:140mm;top:43mm;">
+                            <div style="position: absolute;left:137mm;top:43mm;">
                                 <span t-if="doc.further_confirm">✔</span>
                             </div>
-                            <div style="position: absolute;left:188mm;font-size: 16px;top:43mm;">
+                            <div style="position: absolute;left:185mm;font-size: 16px;top:43mm;">
                                 <span t-esc="doc.further_time"/>
                             </div>
                         </div>
                     </div>
-                    <div class="row" style="position: relative;top:120mm;">
+                    <div class="row" style="position: relative;top:121mm;">
                         <div class="col-7" style="font-size: 24px;">
-                            <div style="position: absolute;top:45mm;left:135mm;">
+                            <div style="position: absolute;top:45mm;left:132mm;">
                                 <span t-if="doc.attachment">✔</span>
                             </div>
-                            <div style="position: absolute;top:55mm;left:135mm;">
+                            <div style="position: absolute;top:55mm;left:132mm;">
                                 <span t-if="doc.recording">✔</span>
                             </div>
                         </div>
                         <div class="col-5" style="font-size: 16px;">
-                            <div style="position: absolute;top:47mm;left:262mm;">
+                            <div style="position: absolute;top:47mm;left:256mm;">
                                 <span style="margin-" t-esc="doc.attachment_qty"/>
                             </div>
-                            <div style="position: absolute;top:55mm;left:262mm;">
+                            <div style="position: absolute;top:55mm;left:256mm;">
                                 <span t-esc="doc.recording_qty"/>
                             </div>
                             <div style="position: absolute;top:64mm;left:236mm;">
@@ -117,34 +120,34 @@
                     <div class="row" style="position: relative;top:140mm;font-size: 18px;">
                         <div class="col-6"/>
                         <div class="col-6">
-                            <div style="position: absolute;top:80mm;right:130mm;">
+                            <div style="position: absolute;top:80mm;right:124mm;">
                                 <span t-esc="doc.general_wages_qty"/>
                             </div>
-                            <div style="position: absolute;top:80mm;right:77mm;">
+                            <div style="position: absolute;top:80mm;right:74mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.general_total_income)"/>
                             </div>
-                            <div style="position: absolute;top:80mm;right:32mm;">
+                            <div style="position: absolute;top:80mm;right:28.5mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.general_vat)"/>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="position: relative;top:160mm;">
                         <div class="col-6" style="font-size: 16px;">
-                            <div style="position:absolute;top:86mm;left:68mm;">
+                            <div style="position:absolute;top:87mm;left:64mm;">
                                 <span t-esc="doc.according"/>
                             </div>
-                            <div style="position:absolute;top:86mm;left:110mm;">
+                            <div style="position:absolute;top:87mm;left:108mm;">
                                 <span t-esc="doc.according_date.strftime('%d/%m/%Y')"/>
                             </div>
                         </div>
                         <div class="col-6">
-                            <div style="position: absolute;top:86mm;right:130mm;font-size: 18px;">
+                            <div style="position: absolute;top:86mm;right:124mm;font-size: 18px;">
                                 <span t-esc="doc.according_qty"/>
                             </div>
-                            <div style="position: absolute;top:86mm;right:77mm;font-size: 18px;">
+                            <div style="position: absolute;top:86mm;right:74mm;font-size: 18px;">
                                 <span t-esc="'{0:,.2f}'.format(doc.according_total_income)"/>
                             </div>
-                            <div style="position: absolute;top:86mm;right:32mm;font-size: 18px;">
+                            <div style="position: absolute;top:86mm;right:28.5mm;font-size: 18px;">
                                 <span t-esc="'{0:,.2f}'.format(doc.according_vat)"/>
                             </div>
                         </div>
@@ -152,13 +155,13 @@
                     <div class="row" style="position: relative;top:170mm;font-size: 18px;">
                         <div class="col-6"/>
                         <div class="col-6">
-                            <div style="position: absolute;top:93mm;right:130mm;">
+                            <div style="position: absolute;top:93mm;right:124mm;">
                                 <span t-esc="doc.one_time_qty"/>
                             </div>
-                            <div style="position: absolute;top:93mm;right:77mm;">
+                            <div style="position: absolute;top:93mm;right:74mm;">
                                 <span style="margin-left:-5mm;" t-esc="'{0:,.2f}'.format(doc.one_time_total_income)"/>
                             </div>
-                            <div style="position: absolute;top:93mm;right:32mm;">
+                            <div style="position: absolute;top:93mm;right:28.5mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.one_time_vat)"/>
                             </div>
                         </div>
@@ -166,13 +169,13 @@
                     <div class="row" style="position: relative;top:180mm;font-size: 18px;">
                         <div class="col-6"/>
                         <div class="col-6">
-                            <div style="position: absolute;top:92mm;right:130mm;">
+                            <div style="position: absolute;top:92mm;right:124mm;">
                                 <span t-esc="doc.in_country_qty"/>
                             </div>
-                            <div style="position: absolute;top:92mm;right:77mm;">
+                            <div style="position: absolute;top:92mm;right:74mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.in_country_total_income)"/>
                             </div>
-                            <div style="position: absolute;top:92mm;right:32mm;">
+                            <div style="position: absolute;top:92mm;right:28.5mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.in_country_vat)"/>
                             </div>
                         </div>
@@ -180,13 +183,13 @@
                     <div class="row" style="position: relative;top:190mm;font-size: 18px;">
                         <div class="col-6"/>
                         <div class="col-3">
-                            <div style="position: absolute;top:90mm;right:130mm;">
+                            <div style="position: absolute;top:90mm;right:124mm;">
                                 <span t-esc="doc.out_country_qty"/>
                             </div>
-                            <div style="position: absolute;top:90mm;right:77mm;">
+                            <div style="position: absolute;top:90mm;right:74mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.out_country_total_income)"/>
                             </div>
-                            <div style="position: absolute;top:90mm;right:32mm;">
+                            <div style="position: absolute;top:90mm;right:28.5mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.out_country_vat)"/>
                             </div>
                         </div>
@@ -194,14 +197,40 @@
                     <div class="row" style="position: relative;top:200mm;font-size: 18px;">
                         <div class="col-6"/>
                         <div class="col-6">
-                            <div style="position: absolute;top:89mm;right:130mm;">
+                            <div style="position: absolute;top:89mm;right:124mm;">
                                 <span t-esc="doc.sum_qty"/>
                             </div>
-                            <div style="position: absolute;top:89mm;right:77mm;">
+                            <div style="position: absolute;top:89mm;right:74mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.sum_total_income)"/>
                             </div>
-                            <div style="position: absolute;top:89mm;right:32mm;">
+                            <div style="position: absolute;top:89mm;right:28.5mm;">
                                 <span t-esc="'{0:,.2f}'.format(doc.sum_vat)"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="position: relative;top:250mm;font-size: 18px;">
+                        <div class="col-12">
+                            <div t-if="doc.user_id.sign_signature" style="position:absolute;top:73mm;left:126mm;">
+                                <img t-att-src="'data:image/png;base64,' + doc.user_id.sign_signature.decode('utf-8')" style="width: 200px; height: 100px;"/>
+                            </div>
+                            <t t-set="month_name">
+                                <t t-if="doc.submit_date.strftime('%m') == '01'">มกราคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '02'">กุมภาพันธ์</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '03'">มีนาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '04'">เมษายน</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '05'">พฤษภาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '06'">มิถุนายน</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '07'">กรกฎาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '08'">สิงหาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '09'">กันยายน</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '10'">ตุลาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '11'">พฤศจิกายน</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '12'">ธันวาคม</t>
+                            </t>
+                            <div t-if="doc.submit_date" style="position: absolute;top:101mm;left:118mm;">
+                                <span t-esc="doc.submit_date.strftime('%#d')"/>
+                                <span style="margin-left:17mm;" t-esc="month_name"/>
+                                <span style="margin-left:26mm;" t-esc="int(doc.submit_date.strftime('%Y')) + 543"/>
                             </div>
                         </div>
                     </div>

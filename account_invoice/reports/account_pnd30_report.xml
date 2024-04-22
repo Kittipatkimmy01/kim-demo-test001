@@ -21,12 +21,12 @@
                                 <span style="margin-left: 4mm;"><t t-esc="doc.partner_id.vat[11:12]"/></span>
                             </div>
                             <div style="float: right;position: absolute;top:10mm;left:60mm;">
-                                <t t-if="doc.partner_id.pnd_branch">
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[0]"/>
-                                    <span style="margin-right: 2.5mm;" t-esc="doc.partner_id.pnd_branch[1]"/>
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[2]"/>
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[3]"/>
-                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.pnd_branch[4]"/>
+                                <t t-if="doc.partner_id.re_branch">
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[0]"/>
+                                    <span style="margin-right: 2.5mm;" t-esc="doc.partner_id.re_branch[1]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[2]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[3]"/>
+                                    <span style="margin-right: 2mm;" t-esc="doc.partner_id.re_branch[4]"/>
                                 </t>
                             </div>
                         </div>

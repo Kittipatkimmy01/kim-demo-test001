@@ -13,9 +13,9 @@
                         <label string="No." for="name" />
                         <field name="name" />
                     </h1>
-                    <field name="partner_id" />
-                    <field name="submit_date" />
-                    <field name="user_id" />
+                    <field name="partner_id" placeholder="ชื่อผู้เสียภาษี"/>
+                    <field name="user_id" placeholder="ชื่อผู้ประกอบการ"/>
+                    <field name="submit_date" placeholder="ยื่นวันที่"/>
                     <group>
                         <group>
                             <field name="money_type" widget="radio" string="ประเภทเงินได้"/>

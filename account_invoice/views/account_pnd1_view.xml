@@ -13,18 +13,18 @@
                         <label string="No." for="name" />
                         <field name="name" />
                     </h1>
-                    <field name="partner_id" />
+                    <field name="partner_id" placeholder="ชื่อผู้เสียภาษี"/>
                     <group>
                         <group>
                             <field name="user_id" string="ชื่อผู้ประกอบการ"/>
                             <field name="normal_confirm" string="ยื่นปกติ"/>
                             <field name="further_confirm" string="ยื่นเพิ่มเติมครั้งที่"/>
-                            <field name="further_time" string="" invisible="further_confirm == False"/>
+                            <field name="further_time" string="ครั้งที่" invisible="further_confirm == False"/>
                             <field name="submit_date" string="ยื่นวันที่"/>
                         </group>
                         <group string="เดือนที่จ่ายเงินได้พึงประเมิน">
                             <field name="year" string="ปี"/>
-                            <field name="month_selected" string=""/>
+                            <field name="month_selected" string="เดือน"/>
                         </group>
                         <group>
                             <field name="attachment" string="ใบแนบ ภ.ง.ด.1 ที่แนบมาพร้อมนี้ :"/>
