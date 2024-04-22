@@ -312,10 +312,29 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row" style="position: absolute;top:180mm;">
+                    <div class="row" style="position: relative;top:180mm;font-size: 18px;">
                         <div class="col-12">
-                            <div t-if="doc.user_id.sign_signature" style="position: absolute;left:310mm;top:67mm;">
+                            <div t-if="doc.user_id.sign_signature" style="position:absolute;top:67mm;left:310mm;">
                                 <img t-att-src="'data:image/png;base64,' + doc.user_id.sign_signature.decode('utf-8')" style="width: 200px; height: 100px;"/>
+                            </div>
+                            <t t-set="month_name">
+                                <t t-if="doc.submit_date.strftime('%m') == '01'">มกราคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '02'">กุมภาพันธ์</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '03'">มีนาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '04'">เมษายน</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '05'">พฤษภาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '06'">มิถุนายน</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '07'">กรกฎาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '08'">สิงหาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '09'">กันยายน</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '10'">ตุลาคม</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '11'">พฤศจิกายน</t>
+                                <t t-elif="doc.submit_date.strftime('%m') == '12'">ธันวาคม</t>
+                            </t>
+                            <div t-if="doc.submit_date" style="position: absolute;top:95mm;left:306mm;">
+                                <span t-esc="doc.submit_date.strftime('%#d')"/>
+                                <span style="margin-left:17mm;" t-esc="month_name"/>
+                                <span style="margin-left:24mm;" t-esc="int(doc.submit_date.strftime('%Y')) + 543"/>
                             </div>
                         </div>
                     </div>
