@@ -1,0 +1,118 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record id="project_milestone_form_inherit" model="ir.ui.view">
+            <field name="name">project.milestone.form.inherit</field>
+            <field name="model">project.milestone</field>
+            <field name="priority">999</field>
+            <field name="inherit_id" ref="project.project_milestone_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='main_details']" position="replace">
+                    <group name="main_milestone_details">
+                        <field name="project_id" invisible="1"/>
+                        <field name="name" placeholder="e.g: Product Launch"/>
+                        <field name="start_date" optional="show"/>
+                        <field name="is_reached"/>
+                    </group>
+                    <group name="main_details">
+                        <field name="responsible_id" widget="many2one_avatar_user"/>
+                        <field name="deadline"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record id="project_milestone_tree_inherit" model="ir.ui.view">
+            <field name="name">project.milestone.tree.inherit</field>
+            <field name="model">project.milestone</field>
+            <field name="inherit_id" ref="project.project_milestone_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='deadline']" position="before">
+                    <field name="is_manager" column_invisible="1"/>
+                    <field name="responsible_id" force_save="1" readonly="responsible_id != False and is_manager == False" widget="many2one_avatar_user"/>
+                    <field name="start_date" readonly="start_date != False and is_manager == False" optional="show"/>
+                </xpath>
+                <xpath expr="//field[@name='deadline']" position="replace">
+                    <field name="deadline" optional="show" readonly="deadline != False and is_manager == False" force_save="1"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="project_milestone_view_search" model="ir.ui.view">
+            <field name="name">project_milestone_view_search</field>
+            <field name="model">project.milestone</field>
+            <field name="arch" type="xml">
+                <search string="Milestone">
+                    <filter name="group_project_id" string="Project" domain="[]" context="{'group_by':'project_id'}"/>
+                </search>
+            </field>
+        </record>
+        <record id="project_milestone_view_tree_all" model="ir.ui.view">
+            <field name="name">project.milestone.view.tree.all</field>
+            <field name="model">project.milestone</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="can_be_marked_as_done"
+                        decoration-danger="is_deadline_exceeded and not can_be_marked_as_done"
+                        decoration-muted="is_reached" editable="bottom" sample="1">
+                    <field name="name"/>
+                    <field name="responsible_id" widget="many2one_avatar_user"/>
+                    <field name="start_date" optional="show"/>
+                    <field name="deadline" optional="show"/>
+                    <field name="is_reached" optional="show"/>
+                    <field name="is_deadline_exceeded" column_invisible="True"/>
+                    <field name="task_count" column_invisible="True"/>
+                    <field name="can_be_marked_as_done" column_invisible="True"/>
+                    <button name="action_view_tasks"
+                            type="object"
+                            title="View Tasks"
+                            string="View Tasks"
+                            class="btn btn-link float-end"
+                            invisible="task_count == 0"
+                            groups="project.group_project_milestone"/>
+                </tree>
+            </field>
+        </record>
+        <record id="milestone_list_view_group_project" model="ir.ui.view">
+            <field name="name">project.milestone.tree.group.project</field>
+            <field name="model">project.milestone</field>
+            <field name="inherit_id" ref="project_milestone_view_tree_all"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <tree position="attributes">
+                    <attribute name="default_group_by">project_id</attribute>
+                </tree>
+            </field>
+        </record>
+        <record id="open_view_milestone_all_group_project" model="ir.actions.act_window">
+            <field name="name">Milestone</field>
+            <field name="res_model">project.milestone</field>
+            <field name="context">{'search_default_group_project_id': 1}</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="project_milestone_view_tree_all"/>
+            <field name="target">main</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No projects found. Let's create one!
+                </p>
+                <p>
+                    Projects contain tasks on the same topic, and each has its own dashboard.
+                </p>
+            </field>
+        </record>
+
+        <!-- <record id="project_milestone_form_inherit_access" model="ir.ui.view">
+            <field name="name">project.milestone.form.inherit.access</field>
+            <field name="model">project.milestone</field>
+            <field name="priority">999</field>
+            <field name="inherit_id" ref="ctp_projects_milestone.project_milestone_form_inherit"/>
+            <field name="groups_id" eval="[(4, ref('ctp_sup_access.group_project_user_controller')), (4, ref('ctp_sup_access.group_project_user_supervisor')), (4, ref('project.group_project_user'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='responsible_id']" position="replace">
+                    <field name="responsible_id" widget="many2one_avatar_user" attrs="{'readonly': [('responsible_id', '!=', False)]}"/>
+                </xpath>
+            </field>
+        </record> -->
+
+
+        <menuitem id="menu_project_report_milestone" action="open_view_milestone_all_group_project" parent="project.menu_project_report"/>
+    </data>
+</odoo>
