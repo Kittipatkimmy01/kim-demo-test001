@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="mile_config_views_form" model="ir.ui.view">
+        <field name="name">mile.config.views.form</field>
+        <field name="model">mile.config</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <field name="access_right"/>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mile_config_views_tree" model="ir.ui.view">
+        <field name="name">mile.config.views.tree</field>
+        <field name="model">mile.config</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="access_right"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mile_config_action">
+        <field name="name">Milestone Config</field>
+        <field name="res_model">mile.config</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="mile_config_menu"
+        name="Milestone Config"
+        parent="project.menu_project_config"
+        action="mile_config_action"
+        sequence="6"/>
+</odoo>

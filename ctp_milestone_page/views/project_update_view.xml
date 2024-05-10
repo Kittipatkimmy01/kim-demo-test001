@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="project_update_view_form_inherit" model="ir.ui.view">
+        <field name="name">project.update.view.form.inherit</field>
+        <field name="model">project.update</field>
+        <field name="inherit_id" ref="project.project_update_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group/group/field[@name='user_id']" position="after">
+                <field name="access_right" widget="many2many_tags" invisible="1"/>
+            </xpath>
+            <xpath expr="//sheet/notebook" position="replace">
+                <notebook>
+                    <page string="Description" name="description">
+                        <field name="description" nolabel="1" class="o_project_update_description" options="{'resizable': false}"/>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+</odoo>
