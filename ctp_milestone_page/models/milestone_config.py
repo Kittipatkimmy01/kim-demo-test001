@@ -9,7 +9,6 @@ class MilestoneConfig(models.Model):
     sequence = fields.Integer(default=50)
     description = fields.Html(string='Description', translate=True)
     access_right = fields.Many2one('res.groups', string='Access Groups')
-    is_schedule = fields.Boolean(default=False, string='Set Schedule')
 
     @api.model_create_single
     def create(self, vals):
@@ -17,5 +16,13 @@ class MilestoneConfig(models.Model):
         name = vals.get('name')
         description = vals.get('description')
         access = vals.get('access_right')
-        self.env['project.update'].modify_view(name, description, access)
+        project_update = self.env['project.update'].search([])
+        for update in project_update:
+            if update:
+                self.env['project.department'].create({
+                    'name': name,
+                    'description': description,
+                    'access_right': access,
+                    'project_update_id': update.id,
+                })
         return res

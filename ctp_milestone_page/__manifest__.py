@@ -10,7 +10,10 @@
     "description": """ """,
     "data": [
         'security/ir.model.access.csv',
+        'data/ir_cron_data.xml',
         'views/milestone_config_view.xml',
         'views/project_update_view.xml',
+        'views/project_setting_view.xml',
+        'views/project_department_view.xml',
     ],
 }

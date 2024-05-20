@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="edit_project_inherit" model="ir.ui.view">
+        <field name="name">project.project.form.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[@name='settings']/group/group/field[@name='alias_contact']" position="before">
+                <field name="is_schedule"/>
+                <field name="set_default_name" invisible="is_schedule == False"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
