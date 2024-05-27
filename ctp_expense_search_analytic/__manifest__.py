@@ -1,0 +1,20 @@
+{
+    "name": "Expense Search Analytic",
+    "version": "17.0.1.0.1",
+    "summary": "C+ Projects Fields",
+    "description": "search analytic distribution",
+    "author": "Cybernetics+",
+    "website": "https://www.cybernetics.plus",
+    "live_test_url": "https://www.cybernetics.plus",
+    "category": "Customizations",
+    "license": "Other proprietary",
+    "price": 999999999.99,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+    "auto_install": False,
+    "depends": ["base", "hr_expense"],
+    "data": [
+        'views/hr_expense_view.xml',
+    ],
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_my_expenses_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.expense.tree.inherit</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.view_my_expenses_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="before">
+                <field name="analytic_distribution_ids" widget="many2many_tags" column_invisible="True"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_expense_view_search_inherit" model="ir.ui.view">
+        <field name="name">hr.expense.view.search.inherit</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="analytic_distribution_ids" string="Analytic Distribution"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
