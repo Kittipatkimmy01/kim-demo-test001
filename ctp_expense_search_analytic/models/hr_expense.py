@@ -24,8 +24,9 @@ class HRExpense(models.Model):
                             continue  # Skip any non integer values
 
                 if int_keys:
-                    get_analytic = self.env['account.analytic.account'].search([('id', 'in', int_keys),
-                                                                                ('plan_id.name', '=', 'Projects')])
+                    get_analytic = self.env['account.analytic.account'].search([('id', 'in', int_keys), '|',
+                                                                                ('plan_id.name', '=', 'Projects'),
+                                                                                ('plan_id.name', '=', 'Internal')])
                     rec.analytic_distribution_ids = get_analytic
                 else:
                     rec.analytic_distribution_ids = False
