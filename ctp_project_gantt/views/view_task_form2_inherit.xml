@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_task_form2_inherit" model="ir.ui.view">
+        <field name="name">project.task.form.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group/field[@name='partner_id']" position="before">
+                <field name="respon_user_id" string="Responsible"/>
+                <field name="color_by_department" string="Color" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="project_task_dependency_view_gantt_inherit" model="ir.ui.view">
+        <field name="name">project.task.dependency.view.gantt.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project_enterprise.project_task_dependency_view_gantt"/>
+        <field name="arch" type="xml">
+            <xpath expr="//gantt" position="attributes">
+                <attribute name="color">color_by_department</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
