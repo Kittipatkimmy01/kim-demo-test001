@@ -9,7 +9,7 @@
                 <field name="group_access_ids"  widget="many2many_tags" invisible="1"/>
             </xpath>
             <xpath expr="//group[@name='sale_header']/group[@name='order_details']/div[@class='o_row']/field[@name='pricelist_id']" position="attributes">
-                <attribute name="domain">[('group_access_id', 'in', group_access_ids)]</attribute>
+                <attribute name="domain">['|', ('group_access_id', 'in', group_access_ids), ('group_access_id', '=', False)]</attribute>
             </xpath>
         </field>
     </record>
