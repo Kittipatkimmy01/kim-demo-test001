@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+      <field name="name">res.partner.form.inherit</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="product.view_partner_property_form"/>
+      <field name="arch" type="xml">
+          <xpath expr="//group/field[@name='property_product_pricelist']" position="after">
+              <field name="group_access_ids" widget="many2many_tags" invisible="1"/>
+          </xpath>
+          <xpath expr="//group/field[@name='property_product_pricelist']" position="attributes">
+              <attribute name="domain">['|', ('group_access_id', 'in', group_access_ids), ('group_access_id', '=', False)]</attribute>
+          </xpath>
+      </field>
+    </record>
+</odoo>

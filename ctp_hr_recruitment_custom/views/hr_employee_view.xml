@@ -5,8 +5,19 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_open_recruitment" type="object" class="oe_stat_button" icon="fa-id-card-o" invisible="recruitment_name == ''">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value"><field name="recruitment_name" readonly="1"/></span>
+                        <span class="o_stat_text">Recruitment</span>
+                    </div>
+                </button>
+            </xpath>
             <xpath expr="//sheet/group/group/field[@name='mobile_phone']" position="before">
                 <field name="name_ch" string="Name Test"/>
+            </xpath>
+            <xpath expr="//sheet/notebook/page[@name='hr_settings']/group/group[@name='active_group']/field[@name='user_id']" position="after">
+                <field name="recruitment_id" string="Related Recruitment"/>
             </xpath>
         </field>
     </record>

@@ -11,7 +11,8 @@ class Applicant(models.Model):
         res = super(Applicant, self)._get_employee_create_vals()
         if 'name_ch' not in res:
             res.update({
-                'name_ch': self.name_ch if self.name_ch else ''
+                'name_ch': self.name_ch if self.name_ch else '',
+                'recruitment_id': self.id,
             })
 
         return res

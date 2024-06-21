@@ -22,10 +22,11 @@
     "auto_install": False,
     "installable": True,
     "depends": [
-        "sale",
+       "base", "sale", "product",
     ],
     "data": [
         'views/product_pricelist.xml',
-        'views/sale_order.xml'
+        'views/sale_order.xml',
+        'views/res_partner_view.xml',
     ],
 }
