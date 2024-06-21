@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+      <field name="name">res.partner.form.inherit</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="replace">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_associate" type="object" class="oe_stat_button" icon="fa-id-card-o">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value"><field name="count_associate"/></span>
+                            <span class="o_stat_text">Associate</span>
+                        </div>
+                    </button>
+
+                    <button name="action_open_employees" type="object" class="oe_stat_button" icon="fa-id-card-o" groups="hr.group_hr_user" invisible="employees_count == 0">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value"><field name="employees_count"/></span>
+                            <span class="o_stat_text">Employee</span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button" type="object" name="schedule_meeting" icon="fa-calendar" context="{'partner_id': id, 'partner_name': name}">
+                        <field string="Meetings" name="meeting_count" widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" type="object" name="action_view_sale_order" groups="sales_team.group_sale_salesman" icon="fa-usd">
+                        <field string="Sales" name="sale_order_count" widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" name="543" type="action" groups="purchase.group_purchase_user" icon="fa-credit-card">
+                        <field string="Purchases" name="purchase_order_count" widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" type="action" name="207" groups="project.group_project_user" context="{'search_default_partner_id': id, 'default_partner_id': id}" invisible="task_count == 0" icon="fa-tasks">
+                        <field string="Tasks" name="task_count" widget="statinfo"/>
+                    </button>
+                    <button type="object" class="oe_stat_button" icon="fa-pencil-square-o" name="action_view_partner_invoices" groups="account.group_account_invoice,account.group_account_readonly" context="{'default_partner_id': id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="currency_id" invisible="1"/>
+                                <field name="total_invoiced" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                            <span class="o_stat_text">Invoiced</span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button" name="544" type="action" groups="account.group_account_invoice" icon="fa-pencil-square-o" help="Vendor Bills">
+                        <field string="Vendor Bills" name="supplier_invoice_count" widget="statinfo"/>
+                    </button>
+                    <button type="action" class="oe_stat_button" icon="fa-credit-card-alt" name="320" context="{'search_default_partner_id': id, 'create': False, 'edit': False}" invisible="payment_token_count == 0">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="payment_token_count" widget="statinfo" nolabel="1"/>
+                            </span>
+                            <span class="o_stat_text">Saved Payment Methods</span>
+                        </div>
+                    </button>
+                    <button groups="sign.group_sign_user" name="open_signatures" type="object" class="oe_stat_button" icon="fa-pencil" invisible="signature_count == 0 or is_company">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value"><field name="signature_count"/></span>
+                            <span class="o_stat_text">Signature Requested</span>
+                        </div>
+                    </button>
+                    <field name="is_published" widget="website_redirect_button"/>
+                </div>
+            </xpath>
+
+            <xpath expr="//group/group/span[@name='address_name']" position="before">
+                <field name="associate_id" invisible="is_company == True"/>
+                <field name="associate_ids" widget="many2many_tags" invisible="1"/>
+            </xpath>
+      </field>
+    </record>
+</odoo>
