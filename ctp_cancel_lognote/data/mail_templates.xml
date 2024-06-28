@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="notify_cancel_approval">
+        <p t-if="cancel">Cancel as <em t-esc="group_name"/> <i class="fa fa-thumbs-up text-danger"/></p>
+    </template>
+</odoo>
